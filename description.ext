@@ -1,0 +1,13 @@
+#define TB_loadingScreen_imagePath "tb_loadingScreen.jpg"
+
+onLoadName="Zaros firefight";
+overviewPicture = "tb_loadingScreen.jpg";
+author="Bigman";
+onLoadMission="Tactical Battlefield: Advance and Secure";
+
+#include "tb_description.sqh"
+#include "tb_settings.hpp"
+#include "tb_objectReplacements.hpp"
+#include "tb_magazineLimitations.hpp"
+#include "tb_supply.hpp"
+#include "tb_vehicleInit.hpp"

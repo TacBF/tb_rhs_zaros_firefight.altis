@@ -1,0 +1,6449 @@
+////////////////////////////////////////////////////////////////////
+//DeRap: Produced from mikero's Dos Tools Dll version 6.15
+//'now' is Mon Apr 17 16:35:40 2017 : 'file' last modified on Thu Feb 18 16:58:38 2016
+//http://dev-heaven.net/projects/list_files/mikero-pbodll
+////////////////////////////////////////////////////////////////////
+
+#define _ARMA_
+
+//Class TB_RHS_Zaros_firefight_r5.Altis : mission.sqm{
+version = 51;
+class EditorData
+{
+	moveGridStep = 1.0;
+	angleGridStep = 0.2617994;
+	scaleGridStep = 1.0;
+	autoGroupingDist = 10.0;
+	toggles = 1;
+	class ItemIDProvider
+	{
+		nextID = 679;
+	};
+	class MarkerIDProvider
+	{
+		nextID = 15;
+	};
+	class Camera
+	{
+		pos[] = {9081.642,57.663128,12073.531};
+		dir[] = {0.30460984,-0.50224215,-0.8094669};
+		up[] = {0.1769116,0.8647241,-0.47013032};
+		aside[] = {-0.9360116,-1.8374994e-06,-0.35223535};
+	};
+};
+addons[] = {"ice_objects","rhs_c_a2port_car","rhs_c_cars","rhsusf_c_hmmwv","rhsusf_vehicles","rhsusf_c_fmtv","aia_misc3_config","A3_Characters_F_BLUFOR","a3_characters_f","A3_Characters_F_OPFOR","A3_Modules_F","A3_Modules_F_Effects","A3_Structures_F_Wrecks","A3_Structures_F_Civ_Garbage","A3_Structures_F_EPB_Items_Luggage","CAStructures_E_Misc_Misc_Interier","PRA3_Misc_Misc_Market","A3_Structures_F_EPC_Civ_Camping","A3_Structures_F_Civ_Camping","A3_Structures_F_Heli_Furniture","A3_Structures_F_Furniture","A3_Structures_F_EPB_Furniture","A3_Structures_F_Heli_Civ_Garbage","CAMisc","aia_misc_config","A3_Structures_F_Civ_Dead","A3_Structures_F_Ind_Crane","A3_Structures_F_Ind_ConcreteMixingPlant","A3_Structures_F_Mil_Barracks","A3_Structures_F_Mil_BagBunker","tb_configs_a3","A3_Structures_F_Ind_Windmill","A3_Structures_F_EPC_Civ_Garbage","A3_Structures_F_Households_Stone_Big"};
+randomSeed = 14339683;
+class CustomAttributes
+{
+	class Category0
+	{
+		name = "Scenario";
+		class Attribute0
+		{
+			property = "EnableDebugConsole";
+			expression = "true";
+			class Value
+			{
+				class data
+				{
+					class type
+					{
+						type[] = {"SCALAR"};
+					};
+					value = 0.0;
+				};
+			};
+		};
+		nAttributes = 1;
+	};
+};
+class Mission
+{
+	class Intel
+	{
+		briefingName = "A&S [S-20]: Zaros firefight (r5) ";
+		overviewText = "AAS USA vs Russia fast-CQB";
+		startWeather = 0.35;
+		startWind = 0.099999994;
+		startWaves = 0.099999994;
+		forecastWeather = 0.75;
+		forecastWind = 0.099999994;
+		forecastWaves = 0.099999994;
+		year = 2015;
+		month = 12;
+		day = 21;
+		minute = 20;
+		startFogDecay = 0.013;
+		forecastFogDecay = 0.013;
+	};
+	class Entities
+	{
+		items = 348;
+		class Item0
+		{
+			dataType = "Marker";
+			position[] = {7710.6924,13.391269,11019.125};
+			name = "zone1";
+			markerType = "ELLIPSE";
+			type = "Empty";
+			colorName = "ColorBlueTeam";
+			a = 100.0;
+			b = 100.0;
+			angle = 0.21505533;
+			id = 0;
+		};
+		class Item1
+		{
+			dataType = "Marker";
+			position[] = {7758.6724,13.874022,11032.592};
+			name = "respawn_west";
+			type = "ICE_HiddenRespawn";
+			colorName = "ColorBlueTeam";
+			a = 0.7;
+			b = 0.7;
+			angle = 0.21505533;
+			id = 1;
+		};
+		class Item2
+		{
+			dataType = "Marker";
+			position[] = {10356.316,26.919624,13188.081};
+			name = "respawn_east";
+			type = "ICE_HiddenRespawn";
+			colorName = "ColorRedTeam";
+			a = 0.7;
+			b = 0.7;
+			angle = 359.43326;
+			id = 2;
+		};
+		class Item3
+		{
+			dataType = "Marker";
+			position[] = {8824.547,50.276695,11374.272};
+			name = "zone3";
+			markerType = "ELLIPSE";
+			type = "Empty";
+			colorName = "ColorBlueTeam";
+			a = 30.0;
+			b = 30.0;
+			id = 3;
+		};
+		class Item4
+		{
+			dataType = "Marker";
+			position[] = {8829.245,32.177265,12035.85};
+			name = "zone6";
+			markerType = "RECTANGLE";
+			type = "Empty";
+			colorName = "ColorGreenTeam";
+			a = 17.0;
+			b = 20.0;
+			angle = 235.70793;
+			id = 4;
+		};
+		class Item5
+		{
+			dataType = "Marker";
+			position[] = {9214.0205,109.79,11468.425};
+			name = "zone4";
+			markerType = "ELLIPSE";
+			type = "Empty";
+			colorName = "ColorBlueTeam";
+			a = 35.0;
+			b = 35.0;
+			id = 5;
+		};
+		class Item6
+		{
+			dataType = "Marker";
+			position[] = {8937.662,68.52938,11861.708};
+			name = "zone5";
+			markerType = "ELLIPSE";
+			type = "Empty";
+			colorName = "ColorGreenTeam";
+			a = 17.0;
+			b = 17.0;
+			id = 6;
+		};
+		class Item7
+		{
+			dataType = "Marker";
+			position[] = {9035.7,17.405071,12360.585};
+			name = "zone10";
+			markerType = "ELLIPSE";
+			type = "Empty";
+			colorName = "ColorRedTeam";
+			a = 35.0;
+			b = 35.0;
+			id = 7;
+		};
+		class Item8
+		{
+			dataType = "Marker";
+			position[] = {9276.821,16.33,12131.694};
+			name = "zone9";
+			markerType = "RECTANGLE";
+			type = "Empty";
+			colorName = "ColorGreenTeam";
+			a = 20.0;
+			b = 25.0;
+			angle = 324.74426;
+			id = 8;
+		};
+		class Item9
+		{
+			dataType = "Marker";
+			position[] = {9044.292,18.325819,12335.729};
+			name = "zone13";
+			markerType = "RECTANGLE";
+			type = "Empty";
+			colorName = "ColorRedTeam";
+			a = 5.0;
+			b = 5.0;
+			id = 9;
+		};
+		class Item10
+		{
+			dataType = "Marker";
+			position[] = {9222.517,109.79,11487.173};
+			name = "zone12";
+			markerType = "RECTANGLE";
+			type = "Empty";
+			colorName = "ColorBlueTeam";
+			a = 5.0;
+			b = 5.0;
+			id = 10;
+		};
+		class Item11
+		{
+			dataType = "Marker";
+			position[] = {9264.86,16.746874,12640.5};
+			name = "zone11";
+			markerType = "RECTANGLE";
+			type = "Empty";
+			colorName = "ColorRedTeam";
+			a = 30.0;
+			b = 15.0;
+			angle = 215.40863;
+			id = 11;
+		};
+		class Item12
+		{
+			dataType = "Marker";
+			position[] = {10332.296,26.20507,13180.74};
+			name = "zone2";
+			markerType = "ELLIPSE";
+			type = "Empty";
+			colorName = "ColorRedTeam";
+			a = 100.0;
+			b = 100.0;
+			id = 12;
+		};
+		class Item13
+		{
+			dataType = "Marker";
+			position[] = {9174.992,16.195847,12014.377};
+			name = "zone8";
+			markerType = "ELLIPSE";
+			type = "Empty";
+			colorName = "ColorGreenTeam";
+			a = 20.0;
+			b = 15.0;
+			id = 13;
+		};
+		class Item14
+		{
+			dataType = "Marker";
+			position[] = {9002.952,27.535381,12056.372};
+			name = "zone7";
+			markerType = "RECTANGLE";
+			type = "Empty";
+			colorName = "ColorGreenTeam";
+			a = 5.0;
+			b = 27.0;
+			angle = 199.00693;
+			id = 14;
+		};
+		class Item15
+		{
+			dataType = "Object";
+			class PositionInfo
+			{
+				position[] = {7779.987,16.723892,11009.518};
+				angles[] = {6.253861,0.0037534237,6.2060065};
+			};
+			side = "Empty";
+			class Attributes
+			{
+				skill = 0.6;
+				name = "flag1";
+			};
+			id = 15;
+			type = "ICE_FlagCarrierWest";
+		};
+		class Item16
+		{
+			dataType = "Object";
+			class PositionInfo
+			{
+				position[] = {7780.081,13.364757,11022.043};
+				angles[] = {0.011995304,1.6586958,6.2086577};
+			};
+			side = "Empty";
+			class Attributes
+			{
+				skill = 0.6;
+			};
+			id = 16;
+			type = "ICE_armamentsBox_west";
+		};
+		class Item17
+		{
+			dataType = "Object";
+			class PositionInfo
+			{
+				position[] = {10389.038,31.45198,13184.604};
+				angles[] = {0.0066592805,0.0,0.026657995};
+			};
+			side = "Empty";
+			class Attributes
+			{
+				skill = 0.6;
+				name = "flag2";
+			};
+			id = 17;
+			type = "ICE_FlagCarrierEast";
+		};
+		class Item18
+		{
+			dataType = "Object";
+			class PositionInfo
+			{
+				position[] = {10373.175,28.407291,13193.668};
+				angles[] = {6.2698536,0.4968642,0.017329043};
+			};
+			side = "Empty";
+			class Attributes
+			{
+				skill = 0.6;
+			};
+			id = 18;
+			type = "ICE_armamentsBox_east";
+		};
+		class Item19
+		{
+			dataType = "Object";
+			class PositionInfo
+			{
+				position[] = {8833.095,54.41706,11371.546};
+				angles[] = {0.0,0.0,0.021328852};
+			};
+			side = "Empty";
+			class Attributes
+			{
+				skill = 0.6;
+				name = "flag3";
+			};
+			id = 19;
+			type = "ICE_FlagCarrierWest";
+		};
+		class Item20
+		{
+			dataType = "Object";
+			class PositionInfo
+			{
+				position[] = {8851.875,35.038986,12037.304};
+				angles[] = {6.1703334,0.0,6.2259154};
+			};
+			side = "Empty";
+			class Attributes
+			{
+				skill = 0.6;
+				name = "flag6";
+			};
+			id = 20;
+			type = "ICE_FlagCarrierWest";
+		};
+		class Item21
+		{
+			dataType = "Object";
+			class PositionInfo
+			{
+				position[] = {9207.721,113.76681,11450.429};
+			};
+			side = "Empty";
+			class Attributes
+			{
+				skill = 0.6;
+				name = "flag4";
+			};
+			id = 21;
+			type = "ICE_FlagCarrierWest";
+		};
+		class Item22
+		{
+			dataType = "Object";
+			class PositionInfo
+			{
+				position[] = {8934.624,72.45943,11864.091};
+				angles[] = {6.2631893,0.0,0.031988446};
+			};
+			side = "Empty";
+			class Attributes
+			{
+				skill = 0.6;
+				name = "flag5";
+			};
+			id = 22;
+			type = "ICE_FlagCarrierWest";
+		};
+		class Item23
+		{
+			dataType = "Object";
+			class PositionInfo
+			{
+				position[] = {9048.806,21.54157,12351.119};
+				angles[] = {0.030656165,0.0,0.008000983};
+			};
+			side = "Empty";
+			class Attributes
+			{
+				skill = 0.6;
+				name = "flag10";
+			};
+			id = 23;
+			type = "ICE_FlagCarrierWest";
+		};
+		class Item24
+		{
+			dataType = "Object";
+			class PositionInfo
+			{
+				position[] = {9263.62,20.31532,12122.331};
+				angles[] = {0.0,0.0,6.2818937};
+			};
+			side = "Empty";
+			class Attributes
+			{
+				skill = 0.6;
+				name = "flag9";
+			};
+			id = 24;
+			type = "ICE_FlagCarrierWest";
+		};
+		class Item25
+		{
+			dataType = "Object";
+			class PositionInfo
+			{
+				position[] = {9099.417,38.109238,12225.875};
+				angles[] = {0.02399601,0.0,0.12336996};
+			};
+			side = "Empty";
+			class Attributes
+			{
+				skill = 0.6;
+				init = "this setVariable [""TB_HO_tickets"", 15];";
+			};
+			id = 25;
+			type = "TB_teamRallyPoint_East";
+		};
+		class Item26
+		{
+			dataType = "Object";
+			class PositionInfo
+			{
+				position[] = {8871.061,29.05656,11751.054};
+				angles[] = {6.219273,0.0,0.102308355};
+			};
+			side = "Empty";
+			class Attributes
+			{
+				skill = 0.6;
+				init = "this setVariable [""TB_HO_tickets"", 15];";
+			};
+			id = 26;
+			type = "TB_teamRallyPoint_West";
+		};
+		class Item27
+		{
+			dataType = "Object";
+			class PositionInfo
+			{
+				position[] = {9043.632,22.317844,12335.488};
+				angles[] = {6.2645216,0.0,6.256525};
+			};
+			side = "Empty";
+			class Attributes
+			{
+				skill = 0.6;
+				init = "hideobject this;";
+				name = "flag13";
+			};
+			id = 27;
+			type = "ICE_FlagCarrierWest";
+		};
+		class Item28
+		{
+			dataType = "Object";
+			class PositionInfo
+			{
+				position[] = {9223.051,113.76681,11486.627};
+			};
+			side = "Empty";
+			class Attributes
+			{
+				skill = 0.6;
+				init = "hideobject this;";
+				name = "flag12";
+			};
+			id = 28;
+			type = "ICE_FlagCarrierWest";
+		};
+		class Item29
+		{
+			dataType = "Object";
+			class PositionInfo
+			{
+				position[] = {9256.863,20.75464,12639.32};
+				angles[] = {6.252529,0.0,6.277848};
+			};
+			side = "Empty";
+			class Attributes
+			{
+				skill = 0.6;
+				name = "flag11";
+			};
+			id = 29;
+			type = "ICE_FlagCarrierWest";
+		};
+		class Item30
+		{
+			dataType = "Object";
+			class PositionInfo
+			{
+				position[] = {10406.617,27.425364,13141.551};
+				angles[] = {0.013332055,4.212824,0.034652505};
+			};
+			side = "Empty";
+			class Attributes
+			{
+				skill = 0.6;
+				init = "this setVariable [""ICE_spawn_players_count"", 15];";
+			};
+			id = 30;
+			type = "RHS_Ural_MSV_01";
+		};
+		class Item31
+		{
+			dataType = "Object";
+			class PositionInfo
+			{
+				position[] = {10382.829,24.340359,13128.812};
+				angles[] = {0.010664274,4.1655025,0.041309625};
+			};
+			side = "Empty";
+			class Attributes
+			{
+				skill = 0.6;
+				init = "this setVariable [""ICE_spawn_players_count"", 10];";
+			};
+			id = 31;
+			type = "rhs_tigr_msv";
+		};
+		class Item32
+		{
+			dataType = "Object";
+			class PositionInfo
+			{
+				position[] = {10398.401,25.05065,13137.542};
+				angles[] = {6.2711854,4.198311,0.039979152};
+			};
+			side = "Empty";
+			class Attributes
+			{
+				skill = 0.6;
+				init = "this setVariable [""ICE_spawn_players_count"", 20];";
+			};
+			id = 32;
+			type = "rhs_tigr_ffv_msv";
+		};
+		class Item33
+		{
+			dataType = "Object";
+			class PositionInfo
+			{
+				position[] = {10364.783,23.634262,13118.998};
+				angles[] = {0.0013372133,4.235923,6.272521};
+			};
+			side = "Empty";
+			class Attributes
+			{
+				skill = 0.6;
+			};
+			id = 33;
+			type = "rhs_tigr_msv";
+		};
+		class Item34
+		{
+			dataType = "Object";
+			class PositionInfo
+			{
+				position[] = {10390.175,24.735834,13133.182};
+				angles[] = {0.021328852,4.27086,0.035984326};
+			};
+			side = "Empty";
+			class Attributes
+			{
+				skill = 0.6;
+				init = "this setVariable [""ICE_spawn_players_count"", 15];";
+			};
+			id = 34;
+			type = "rhs_tigr_msv";
+		};
+		class Item35
+		{
+			dataType = "Object";
+			class PositionInfo
+			{
+				position[] = {10355.283,23.276125,13114.108};
+				angles[] = {6.2698536,4.2125974,0.03731497};
+			};
+			side = "Empty";
+			class Attributes
+			{
+				skill = 0.6;
+			};
+			id = 35;
+			type = "rhs_tigr_ffv_msv";
+		};
+		class Item36
+		{
+			dataType = "Object";
+			class PositionInfo
+			{
+				position[] = {10373.834,25.987286,13123.582};
+				angles[] = {6.2711854,4.246571,0.051953323};
+			};
+			side = "Empty";
+			class Attributes
+			{
+				skill = 0.6;
+			};
+			id = 36;
+			type = "RHS_Ural_MSV_01";
+		};
+		class Item37
+		{
+			dataType = "Object";
+			class PositionInfo
+			{
+				position[] = {7763.952,14.55152,10977.828};
+				angles[] = {0.0,1.7089763,0.00799353};
+			};
+			side = "Empty";
+			class Attributes
+			{
+				skill = 0.6;
+			};
+			id = 37;
+			type = "rhsusf_m1025_d";
+		};
+		class Item38
+		{
+			dataType = "Object";
+			class PositionInfo
+			{
+				position[] = {7754.995,14.490266,10978.624};
+				angles[] = {0.0,1.6371822,6.264525};
+			};
+			side = "Empty";
+			class Attributes
+			{
+				skill = 0.6;
+			};
+			id = 38;
+			type = "rhsusf_m1025_d";
+		};
+		class Item39
+		{
+			dataType = "Object";
+			class PositionInfo
+			{
+				position[] = {7688.767,14.018218,10978.639};
+				angles[] = {0.0,1.472884,0.010664274};
+			};
+			side = "Empty";
+			class Attributes
+			{
+				skill = 0.6;
+				init = "this setVariable [""ICE_spawn_players_count"", 15];";
+			};
+			id = 39;
+			type = "rhsusf_M1083A1P2_d_fmtv_usarmy";
+		};
+		class Item40
+		{
+			dataType = "Object";
+			class PositionInfo
+			{
+				position[] = {7717.6733,14.232419,10980.694};
+				angles[] = {6.267187,1.5540724,0.0066592805};
+			};
+			side = "Empty";
+			class Attributes
+			{
+				skill = 0.6;
+				init = "this setVariable [""ICE_spawn_players_count"", 10];";
+			};
+			id = 40;
+			type = "rhsusf_m1025_d";
+		};
+		class Item41
+		{
+			dataType = "Object";
+			class PositionInfo
+			{
+				position[] = {7744.208,14.60754,10979.959};
+				angles[] = {6.257858,1.6319036,0.0066682254};
+			};
+			side = "Empty";
+			class Attributes
+			{
+				skill = 0.6;
+			};
+			id = 41;
+			type = "rhsusf_m1025_d";
+		};
+		class Item42
+		{
+			dataType = "Object";
+			class PositionInfo
+			{
+				position[] = {7702.254,14.114046,10980.427};
+				angles[] = {6.2618566,1.5351076,0.02399601};
+			};
+			side = "Empty";
+			class Attributes
+			{
+				skill = 0.6;
+				init = "this setVariable [""ICE_spawn_players_count"", 15];";
+			};
+			id = 42;
+			type = "rhsusf_m1025_d";
+		};
+		class Item43
+		{
+			dataType = "Object";
+			class PositionInfo
+			{
+				position[] = {7731.527,14.505848,10979.626};
+				angles[] = {6.265853,1.6777616,0.034652505};
+			};
+			side = "Empty";
+			class Attributes
+			{
+				skill = 0.6;
+			};
+			id = 43;
+			type = "rhsusf_M1083A1P2_d_fmtv_usarmy";
+		};
+		class Item44
+		{
+			dataType = "Object";
+			class PositionInfo
+			{
+				position[] = {9158.857,20.852755,12020.173};
+				angles[] = {6.2365537,0.0,6.227245};
+			};
+			side = "Empty";
+			class Attributes
+			{
+				skill = 0.6;
+				name = "flag8";
+			};
+			id = 44;
+			type = "ICE_FlagCarrierWest";
+		};
+		class Item45
+		{
+			dataType = "Object";
+			class PositionInfo
+			{
+				position[] = {8990.566,31.312222,12034.351};
+				angles[] = {6.240545,0.0,6.2698536};
+			};
+			side = "Empty";
+			class Attributes
+			{
+				skill = 0.6;
+				name = "flag7";
+			};
+			id = 45;
+			type = "ICE_FlagCarrierWest";
+		};
+		class Item46
+		{
+			dataType = "Object";
+			class PositionInfo
+			{
+				position[] = {9223.009,122.67621,11486.143};
+				angles[] = {0.0,5.934119,0.0};
+			};
+			side = "Empty";
+			class Attributes
+			{
+				skill = 0.6;
+			};
+			id = 46;
+			type = "TB_Land_Cargo_Tower_V2_F";
+		};
+		class Item47
+		{
+			dataType = "Object";
+			class PositionInfo
+			{
+				position[] = {9042.875,20.418821,12334.883};
+				angles[] = {6.2645216,5.67232,6.256525};
+			};
+			side = "Empty";
+			class Attributes
+			{
+				skill = 0.6;
+			};
+			id = 47;
+			type = "Land_CamoNetB_EAST";
+		};
+		class Item48
+		{
+			dataType = "Group";
+			side = "West";
+			class Entities
+			{
+				items = 1;
+				class Item0
+				{
+					dataType = "Object";
+					class PositionInfo
+					{
+						position[] = {7747.0073,13.70629,11006.269};
+						angles[] = {6.252529,1.5663486,0.018663859};
+					};
+					side = "West";
+					flags = 2;
+					class Attributes
+					{
+						skill = 0.6;
+						name = "playerWest1";
+						isPlayable = 1;
+					};
+					id = 49;
+					type = "B_Soldier_F";
+				};
+			};
+			class Attributes{};
+			id = 48;
+		};
+		class Item49
+		{
+			dataType = "Group";
+			side = "West";
+			class Entities
+			{
+				items = 1;
+				class Item0
+				{
+					dataType = "Object";
+					class PositionInfo
+					{
+						position[] = {7747.011,13.767469,11008.261};
+						angles[] = {6.252529,1.5663486,0.018663859};
+					};
+					side = "West";
+					flags = 2;
+					class Attributes
+					{
+						skill = 0.6;
+						name = "playerWest2";
+						isPlayable = 1;
+					};
+					id = 51;
+					type = "B_Soldier_F";
+				};
+			};
+			class Attributes{};
+			id = 50;
+		};
+		class Item50
+		{
+			dataType = "Group";
+			side = "West";
+			class Entities
+			{
+				items = 1;
+				class Item0
+				{
+					dataType = "Object";
+					class PositionInfo
+					{
+						position[] = {7747.003,13.825281,11010.243};
+						angles[] = {6.267187,1.5663486,0.018663859};
+					};
+					side = "West";
+					flags = 2;
+					class Attributes
+					{
+						skill = 0.6;
+						name = "playerWest3";
+						isPlayable = 1;
+					};
+					id = 53;
+					type = "B_Soldier_F";
+				};
+			};
+			class Attributes{};
+			id = 52;
+		};
+		class Item51
+		{
+			dataType = "Group";
+			side = "West";
+			class Entities
+			{
+				items = 1;
+				class Item0
+				{
+					dataType = "Object";
+					class PositionInfo
+					{
+						position[] = {7758.5566,13.83752,11012.369};
+						angles[] = {6.280511,1.5899711,6.257858};
+					};
+					side = "West";
+					flags = 2;
+					class Attributes
+					{
+						skill = 0.6;
+						name = "playerWest4";
+						isPlayable = 1;
+					};
+					id = 55;
+					type = "B_Soldier_F";
+				};
+			};
+			class Attributes{};
+			id = 54;
+		};
+		class Item52
+		{
+			dataType = "Group";
+			side = "West";
+			class Entities
+			{
+				items = 1;
+				class Item0
+				{
+					dataType = "Object";
+					class PositionInfo
+					{
+						position[] = {7758.6133,13.838478,11014.381};
+						angles[] = {0.003996757,1.5899711,6.251197};
+					};
+					side = "West";
+					flags = 2;
+					class Attributes
+					{
+						skill = 0.6;
+						name = "playerWest5";
+						isPlayable = 1;
+					};
+					id = 57;
+					type = "B_Soldier_F";
+				};
+			};
+			class Attributes{};
+			id = 56;
+		};
+		class Item53
+		{
+			dataType = "Group";
+			side = "West";
+			class Entities
+			{
+				items = 1;
+				class Item0
+				{
+					dataType = "Object";
+					class PositionInfo
+					{
+						position[] = {7758.6265,13.830077,11016.371};
+						angles[] = {0.003996757,1.5899711,6.251197};
+					};
+					side = "West";
+					flags = 2;
+					class Attributes
+					{
+						skill = 0.6;
+						name = "playerWest6";
+						isPlayable = 1;
+					};
+					id = 59;
+					type = "B_Soldier_F";
+				};
+			};
+			class Attributes{};
+			id = 58;
+		};
+		class Item54
+		{
+			dataType = "Group";
+			side = "West";
+			class Entities
+			{
+				items = 1;
+				class Item0
+				{
+					dataType = "Object";
+					class PositionInfo
+					{
+						position[] = {7758.6865,13.824568,11018.38};
+						angles[] = {6.2818484,1.5899711,6.251197};
+					};
+					side = "West";
+					flags = 2;
+					class Attributes
+					{
+						skill = 0.6;
+						name = "playerWest7";
+						isPlayable = 1;
+					};
+					id = 61;
+					type = "B_Soldier_F";
+				};
+			};
+			class Attributes{};
+			id = 60;
+		};
+		class Item55
+		{
+			dataType = "Group";
+			side = "West";
+			class Entities
+			{
+				items = 1;
+				class Item0
+				{
+					dataType = "Object";
+					class PositionInfo
+					{
+						position[] = {7758.728,13.825878,11020.352};
+						angles[] = {6.2818484,1.5899711,6.251197};
+					};
+					side = "West";
+					flags = 2;
+					class Attributes
+					{
+						skill = 0.6;
+						name = "playerWest8";
+						isPlayable = 1;
+					};
+					id = 63;
+					type = "B_Soldier_F";
+				};
+			};
+			class Attributes{};
+			id = 62;
+		};
+		class Item56
+		{
+			dataType = "Group";
+			side = "West";
+			class Entities
+			{
+				items = 1;
+				class Item0
+				{
+					dataType = "Object";
+					class PositionInfo
+					{
+						position[] = {7758.756,13.80983,11022.411};
+						angles[] = {0.014664836,1.5899711,6.2352223};
+					};
+					side = "West";
+					flags = 2;
+					class Attributes
+					{
+						skill = 0.6;
+						name = "playerWest9";
+						isPlayable = 1;
+					};
+					id = 65;
+					type = "B_Soldier_F";
+				};
+			};
+			class Attributes{};
+			id = 64;
+		};
+		class Item57
+		{
+			dataType = "Group";
+			side = "West";
+			class Entities
+			{
+				items = 1;
+				class Item0
+				{
+					dataType = "Object";
+					class PositionInfo
+					{
+						position[] = {7758.81,13.777991,11024.404};
+						angles[] = {0.014664836,1.5899177,6.2352223};
+					};
+					side = "West";
+					flags = 2;
+					class Attributes
+					{
+						skill = 0.6;
+						name = "playerWest10";
+						isPlayer = 1;
+						isPlayable = 1;
+					};
+					id = 67;
+					type = "B_Soldier_F";
+				};
+			};
+			class Attributes{};
+			id = 66;
+		};
+		class Item58
+		{
+			dataType = "Group";
+			side = "West";
+			class Entities
+			{
+				items = 1;
+				class Item0
+				{
+					dataType = "Object";
+					class PositionInfo
+					{
+						position[] = {7758.5747,13.747268,11006.225};
+						angles[] = {6.253861,1.564096,6.265853};
+					};
+					side = "West";
+					flags = 2;
+					class Attributes
+					{
+						skill = 0.6;
+						name = "playerWest11";
+						isPlayable = 1;
+					};
+					id = 69;
+					type = "B_Soldier_F";
+				};
+			};
+			class Attributes{};
+			id = 68;
+		};
+		class Item59
+		{
+			dataType = "Group";
+			side = "West";
+			class Entities
+			{
+				items = 1;
+				class Item0
+				{
+					dataType = "Object";
+					class PositionInfo
+					{
+						position[] = {7758.559,13.792006,11008.209};
+						angles[] = {6.2618566,1.564096,6.257858};
+					};
+					side = "West";
+					flags = 2;
+					class Attributes
+					{
+						skill = 0.6;
+						name = "playerWest12";
+						isPlayable = 1;
+					};
+					id = 71;
+					type = "B_Soldier_F";
+				};
+			};
+			class Attributes{};
+			id = 70;
+		};
+		class Item60
+		{
+			dataType = "Group";
+			side = "West";
+			class Entities
+			{
+				items = 1;
+				class Item0
+				{
+					dataType = "Object";
+					class PositionInfo
+					{
+						position[] = {7758.5596,13.831669,11010.201};
+						angles[] = {6.280511,1.564096,6.257858};
+					};
+					side = "West";
+					flags = 2;
+					class Attributes
+					{
+						skill = 0.6;
+						name = "playerWest13";
+						isPlayable = 1;
+					};
+					id = 73;
+					type = "B_Soldier_F";
+				};
+			};
+			class Attributes{};
+			id = 72;
+		};
+		class Item61
+		{
+			dataType = "Group";
+			side = "West";
+			class Entities
+			{
+				items = 1;
+				class Item0
+				{
+					dataType = "Object";
+					class PositionInfo
+					{
+						position[] = {7755.557,13.913657,11012.428};
+						angles[] = {6.280511,1.5899711,6.257858};
+					};
+					side = "West";
+					flags = 2;
+					class Attributes
+					{
+						skill = 0.6;
+						name = "playerWest14";
+						isPlayable = 1;
+					};
+					id = 75;
+					type = "B_Soldier_F";
+				};
+			};
+			class Attributes{};
+			id = 74;
+		};
+		class Item62
+		{
+			dataType = "Group";
+			side = "West";
+			class Entities
+			{
+				items = 1;
+				class Item0
+				{
+					dataType = "Object";
+					class PositionInfo
+					{
+						position[] = {7755.5825,13.918429,11014.461};
+						angles[] = {6.280511,1.5899711,6.257858};
+					};
+					side = "West";
+					flags = 2;
+					class Attributes
+					{
+						skill = 0.6;
+						name = "playerWest15";
+						isPlayable = 1;
+					};
+					id = 77;
+					type = "B_Soldier_F";
+				};
+			};
+			class Attributes{};
+			id = 76;
+		};
+		class Item63
+		{
+			dataType = "Group";
+			side = "West";
+			class Entities
+			{
+				items = 1;
+				class Item0
+				{
+					dataType = "Object";
+					class PositionInfo
+					{
+						position[] = {7755.6265,13.922592,11016.439};
+						angles[] = {6.280511,1.5899711,6.257858};
+					};
+					side = "West";
+					flags = 2;
+					class Attributes
+					{
+						skill = 0.6;
+						name = "playerWest16";
+						isPlayable = 1;
+					};
+					id = 79;
+					type = "B_Soldier_F";
+				};
+			};
+			class Attributes{};
+			id = 78;
+		};
+		class Item64
+		{
+			dataType = "Group";
+			side = "West";
+			class Entities
+			{
+				items = 1;
+				class Item0
+				{
+					dataType = "Object";
+					class PositionInfo
+					{
+						position[] = {7755.6777,13.9208975,11018.425};
+						angles[] = {6.2818484,1.5899711,6.251197};
+					};
+					side = "West";
+					flags = 2;
+					class Attributes
+					{
+						skill = 0.6;
+						name = "playerWest17";
+						isPlayable = 1;
+					};
+					id = 81;
+					type = "B_Soldier_F";
+				};
+			};
+			class Attributes{};
+			id = 80;
+		};
+		class Item65
+		{
+			dataType = "Group";
+			side = "West";
+			class Entities
+			{
+				items = 1;
+				class Item0
+				{
+					dataType = "Object";
+					class PositionInfo
+					{
+						position[] = {7755.705,13.922674,11020.417};
+						angles[] = {6.2818484,1.5899711,6.251197};
+					};
+					side = "West";
+					flags = 2;
+					class Attributes
+					{
+						skill = 0.6;
+						name = "playerWest18";
+						isPlayable = 1;
+					};
+					id = 83;
+					type = "B_Soldier_F";
+				};
+			};
+			class Attributes{};
+			id = 82;
+		};
+		class Item66
+		{
+			dataType = "Group";
+			side = "West";
+			class Entities
+			{
+				items = 1;
+				class Item0
+				{
+					dataType = "Object";
+					class PositionInfo
+					{
+						position[] = {7755.7637,13.923553,11022.482};
+						angles[] = {6.2818484,1.5899711,6.251197};
+					};
+					side = "West";
+					flags = 2;
+					class Attributes
+					{
+						skill = 0.6;
+						name = "playerWest19";
+						isPlayable = 1;
+					};
+					id = 85;
+					type = "B_Soldier_F";
+				};
+			};
+			class Attributes{};
+			id = 84;
+		};
+		class Item67
+		{
+			dataType = "Group";
+			side = "West";
+			class Entities
+			{
+				items = 1;
+				class Item0
+				{
+					dataType = "Object";
+					class PositionInfo
+					{
+						position[] = {7755.78,13.922739,11024.453};
+						angles[] = {0.014664836,1.5899711,6.2352223};
+					};
+					side = "West";
+					flags = 2;
+					class Attributes
+					{
+						skill = 0.6;
+						name = "playerWest20";
+						isPlayable = 1;
+					};
+					id = 87;
+					type = "B_Soldier_F";
+				};
+			};
+			class Attributes{};
+			id = 86;
+		};
+		class Item68
+		{
+			dataType = "Group";
+			side = "West";
+			class Entities
+			{
+				items = 1;
+				class Item0
+				{
+					dataType = "Object";
+					class PositionInfo
+					{
+						position[] = {7755.583,13.7981615,11006.191};
+						angles[] = {6.253861,1.564096,6.265853};
+					};
+					side = "West";
+					flags = 2;
+					class Attributes
+					{
+						skill = 0.6;
+						name = "playerWest21";
+						isPlayable = 1;
+					};
+					id = 89;
+					type = "B_Soldier_F";
+				};
+			};
+			class Attributes{};
+			id = 88;
+		};
+		class Item69
+		{
+			dataType = "Group";
+			side = "West";
+			class Entities
+			{
+				items = 1;
+				class Item0
+				{
+					dataType = "Object";
+					class PositionInfo
+					{
+						position[] = {7755.5723,13.856639,11008.179};
+						angles[] = {6.253861,1.564096,6.265853};
+					};
+					side = "West";
+					flags = 2;
+					class Attributes
+					{
+						skill = 0.6;
+						name = "playerWest22";
+						isPlayable = 1;
+					};
+					id = 91;
+					type = "B_Soldier_F";
+				};
+			};
+			class Attributes{};
+			id = 90;
+		};
+		class Item70
+		{
+			dataType = "Group";
+			side = "West";
+			class Entities
+			{
+				items = 1;
+				class Item0
+				{
+					dataType = "Object";
+					class PositionInfo
+					{
+						position[] = {7755.559,13.907585,11010.168};
+						angles[] = {6.280511,1.564096,6.257858};
+					};
+					side = "West";
+					flags = 2;
+					class Attributes
+					{
+						skill = 0.6;
+						name = "playerWest23";
+						isPlayable = 1;
+					};
+					id = 93;
+					type = "B_Soldier_F";
+				};
+			};
+			class Attributes{};
+			id = 92;
+		};
+		class Item71
+		{
+			dataType = "Group";
+			side = "West";
+			class Entities
+			{
+				items = 1;
+				class Item0
+				{
+					dataType = "Object";
+					class PositionInfo
+					{
+						position[] = {7752.5625,13.898688,11012.484};
+						angles[] = {6.2805333,1.5899711,0.012000273};
+					};
+					side = "West";
+					flags = 2;
+					class Attributes
+					{
+						skill = 0.6;
+						name = "playerWest24";
+						isPlayable = 1;
+					};
+					id = 95;
+					type = "B_Soldier_F";
+				};
+			};
+			class Attributes{};
+			id = 94;
+		};
+		class Item72
+		{
+			dataType = "Group";
+			side = "West";
+			class Entities
+			{
+				items = 1;
+				class Item0
+				{
+					dataType = "Object";
+					class PositionInfo
+					{
+						position[] = {7752.594,13.904407,11014.485};
+						angles[] = {6.2805333,1.5899711,0.012000273};
+					};
+					side = "West";
+					flags = 2;
+					class Attributes
+					{
+						skill = 0.6;
+						name = "playerWest25";
+						isPlayable = 1;
+					};
+					id = 97;
+					type = "B_Soldier_F";
+				};
+			};
+			class Attributes{};
+			id = 96;
+		};
+		class Item73
+		{
+			dataType = "Group";
+			side = "West";
+			class Entities
+			{
+				items = 1;
+				class Item0
+				{
+					dataType = "Object";
+					class PositionInfo
+					{
+						position[] = {7752.6426,13.910326,11016.486};
+						angles[] = {6.2805333,1.5899711,0.012000273};
+					};
+					side = "West";
+					flags = 2;
+					class Attributes
+					{
+						skill = 0.6;
+						name = "playerWest26";
+						isPlayable = 1;
+					};
+					id = 99;
+					type = "B_Soldier_F";
+				};
+			};
+			class Attributes{};
+			id = 98;
+		};
+		class Item74
+		{
+			dataType = "Group";
+			side = "West";
+			class Entities
+			{
+				items = 1;
+				class Item0
+				{
+					dataType = "Object";
+					class PositionInfo
+					{
+						position[] = {7752.6733,13.929487,11018.471};
+						angles[] = {6.2658563,1.5899711,0.012000273};
+					};
+					side = "West";
+					flags = 2;
+					class Attributes
+					{
+						skill = 0.6;
+						name = "playerWest27";
+						isPlayable = 1;
+					};
+					id = 101;
+					type = "B_Soldier_F";
+				};
+			};
+			class Attributes{};
+			id = 100;
+		};
+		class Item75
+		{
+			dataType = "Group";
+			side = "West";
+			class Entities
+			{
+				items = 1;
+				class Item0
+				{
+					dataType = "Object";
+					class PositionInfo
+					{
+						position[] = {7752.7183,13.954454,11020.467};
+						angles[] = {6.2818484,1.5899711,6.2791886};
+					};
+					side = "West";
+					flags = 2;
+					class Attributes
+					{
+						skill = 0.6;
+						name = "playerWest28";
+						isPlayable = 1;
+					};
+					id = 103;
+					type = "B_Soldier_F";
+				};
+			};
+			class Attributes{};
+			id = 102;
+		};
+		class Item76
+		{
+			dataType = "Group";
+			side = "West";
+			class Entities
+			{
+				items = 1;
+				class Item0
+				{
+					dataType = "Object";
+					class PositionInfo
+					{
+						position[] = {7752.7573,13.957019,11022.508};
+						angles[] = {6.2818484,1.5899711,6.2791886};
+					};
+					side = "West";
+					flags = 2;
+					class Attributes
+					{
+						skill = 0.6;
+						name = "playerWest29";
+						isPlayable = 1;
+					};
+					id = 105;
+					type = "B_Soldier_F";
+				};
+			};
+			class Attributes{};
+			id = 104;
+		};
+		class Item77
+		{
+			dataType = "Group";
+			side = "West";
+			class Entities
+			{
+				items = 1;
+				class Item0
+				{
+					dataType = "Object";
+					class PositionInfo
+					{
+						position[] = {7752.795,13.959529,11024.503};
+						angles[] = {6.2818484,1.5899711,6.2791886};
+					};
+					side = "West";
+					flags = 2;
+					class Attributes
+					{
+						skill = 0.6;
+						name = "playerWest30";
+						isPlayable = 1;
+					};
+					id = 107;
+					type = "B_Soldier_F";
+				};
+			};
+			class Attributes{};
+			id = 106;
+		};
+		class Item78
+		{
+			dataType = "Group";
+			side = "West";
+			class Entities
+			{
+				items = 1;
+				class Item0
+				{
+					dataType = "Object";
+					class PositionInfo
+					{
+						position[] = {7752.5864,13.779417,11006.195};
+						angles[] = {6.253861,1.564096,0.012000273};
+					};
+					side = "West";
+					flags = 2;
+					class Attributes
+					{
+						skill = 0.6;
+						name = "playerWest31";
+						isPlayable = 1;
+					};
+					id = 109;
+					type = "B_Soldier_F";
+				};
+			};
+			class Attributes{};
+			id = 108;
+		};
+		class Item79
+		{
+			dataType = "Group";
+			side = "West";
+			class Entities
+			{
+				items = 1;
+				class Item0
+				{
+					dataType = "Object";
+					class PositionInfo
+					{
+						position[] = {7752.5684,13.837796,11008.192};
+						angles[] = {6.253861,1.564096,0.012000273};
+					};
+					side = "West";
+					flags = 2;
+					class Attributes
+					{
+						skill = 0.6;
+						name = "playerWest32";
+						isPlayable = 1;
+					};
+					id = 111;
+					type = "B_Soldier_F";
+				};
+			};
+			class Attributes{};
+			id = 110;
+		};
+		class Item80
+		{
+			dataType = "Group";
+			side = "West";
+			class Entities
+			{
+				items = 1;
+				class Item0
+				{
+					dataType = "Object";
+					class PositionInfo
+					{
+						position[] = {7752.5586,13.892485,11010.175};
+						angles[] = {6.2805333,1.564096,0.012000273};
+					};
+					side = "West";
+					flags = 2;
+					class Attributes
+					{
+						skill = 0.6;
+						name = "playerWest33";
+						isPlayable = 1;
+					};
+					id = 113;
+					type = "B_Soldier_F";
+				};
+			};
+			class Attributes{};
+			id = 112;
+		};
+		class Item81
+		{
+			dataType = "Group";
+			side = "West";
+			class Entities
+			{
+				items = 1;
+				class Item0
+				{
+					dataType = "Object";
+					class PositionInfo
+					{
+						position[] = {7749.5576,13.862772,11012.538};
+						angles[] = {6.2805333,1.5899711,0.012000273};
+					};
+					side = "West";
+					flags = 2;
+					class Attributes
+					{
+						skill = 0.6;
+						name = "playerWest34";
+						isPlayable = 1;
+					};
+					id = 115;
+					type = "B_Soldier_F";
+				};
+			};
+			class Attributes{};
+			id = 114;
+		};
+		class Item82
+		{
+			dataType = "Group";
+			side = "West";
+			class Entities
+			{
+				items = 1;
+				class Item0
+				{
+					dataType = "Object";
+					class PositionInfo
+					{
+						position[] = {7749.574,13.868317,11014.543};
+						angles[] = {6.2805333,1.5899711,0.012000273};
+					};
+					side = "West";
+					flags = 2;
+					class Attributes
+					{
+						skill = 0.6;
+						name = "playerWest35";
+						isPlayable = 1;
+					};
+					id = 117;
+					type = "B_Soldier_F";
+				};
+			};
+			class Attributes{};
+			id = 116;
+		};
+		class Item83
+		{
+			dataType = "Group";
+			side = "West";
+			class Entities
+			{
+				items = 1;
+				class Item0
+				{
+					dataType = "Object";
+					class PositionInfo
+					{
+						position[] = {7749.6147,13.874154,11016.551};
+						angles[] = {6.2805333,1.5899711,0.012000273};
+					};
+					side = "West";
+					flags = 2;
+					class Attributes
+					{
+						skill = 0.6;
+						name = "playerWest36";
+						isPlayable = 1;
+					};
+					id = 119;
+					type = "B_Soldier_F";
+				};
+			};
+			class Attributes{};
+			id = 118;
+		};
+		class Item84
+		{
+			dataType = "Group";
+			side = "West";
+			class Entities
+			{
+				items = 1;
+				class Item0
+				{
+					dataType = "Object";
+					class PositionInfo
+					{
+						position[] = {7749.676,13.894994,11018.556};
+						angles[] = {6.2658563,1.5899711,0.012000273};
+					};
+					side = "West";
+					flags = 2;
+					class Attributes
+					{
+						skill = 0.6;
+						name = "playerWest37";
+						isPlayable = 1;
+					};
+					id = 121;
+					type = "B_Soldier_F";
+				};
+			};
+			class Attributes{};
+			id = 120;
+		};
+		class Item85
+		{
+			dataType = "Group";
+			side = "West";
+			class Entities
+			{
+				items = 1;
+				class Item0
+				{
+					dataType = "Object";
+					class PositionInfo
+					{
+						position[] = {7749.706,13.9293165,11020.515};
+						angles[] = {6.2658563,1.5899711,0.012000273};
+					};
+					side = "West";
+					flags = 2;
+					class Attributes
+					{
+						skill = 0.6;
+						name = "playerWest38";
+						isPlayable = 1;
+					};
+					id = 123;
+					type = "B_Soldier_F";
+				};
+			};
+			class Attributes{};
+			id = 122;
+		};
+		class Item86
+		{
+			dataType = "Group";
+			side = "West";
+			class Entities
+			{
+				items = 1;
+				class Item0
+				{
+					dataType = "Object";
+					class PositionInfo
+					{
+						position[] = {7749.748,13.965734,11022.587};
+						angles[] = {6.2658563,1.5899711,0.012000273};
+					};
+					side = "West";
+					flags = 2;
+					class Attributes
+					{
+						skill = 0.6;
+						name = "playerWest39";
+						isPlayable = 1;
+					};
+					id = 125;
+					type = "B_Soldier_F";
+				};
+			};
+			class Attributes{};
+			id = 124;
+		};
+		class Item87
+		{
+			dataType = "Group";
+			side = "West";
+			class Entities
+			{
+				items = 1;
+				class Item0
+				{
+					dataType = "Object";
+					class PositionInfo
+					{
+						position[] = {7749.7886,13.971646,11024.571};
+						angles[] = {6.2818484,1.5899711,6.2791886};
+					};
+					side = "West";
+					flags = 2;
+					class Attributes
+					{
+						skill = 0.6;
+						name = "playerWest40";
+						isPlayable = 1;
+					};
+					id = 127;
+					type = "B_Soldier_F";
+				};
+			};
+			class Attributes{};
+			id = 126;
+		};
+		class Item88
+		{
+			dataType = "Group";
+			side = "West";
+			class Entities
+			{
+				items = 1;
+				class Item0
+				{
+					dataType = "Object";
+					class PositionInfo
+					{
+						position[] = {7749.628,13.740637,11006.163};
+						angles[] = {6.252529,1.564096,0.013332055};
+					};
+					side = "West";
+					flags = 2;
+					class Attributes
+					{
+						skill = 0.6;
+						name = "playerWest41";
+						isPlayable = 1;
+					};
+					id = 129;
+					type = "B_Soldier_F";
+				};
+			};
+			class Attributes{};
+			id = 128;
+		};
+		class Item89
+		{
+			dataType = "Group";
+			side = "West";
+			class Entities
+			{
+				items = 1;
+				class Item0
+				{
+					dataType = "Object";
+					class PositionInfo
+					{
+						position[] = {7749.599,13.800985,11008.152};
+						angles[] = {6.253861,1.564096,0.012000273};
+					};
+					side = "West";
+					flags = 2;
+					class Attributes
+					{
+						skill = 0.6;
+						name = "playerWest42";
+						isPlayable = 1;
+					};
+					id = 131;
+					type = "B_Soldier_F";
+				};
+			};
+			class Attributes{};
+			id = 130;
+		};
+		class Item90
+		{
+			dataType = "Group";
+			side = "West";
+			class Entities
+			{
+				items = 1;
+				class Item0
+				{
+					dataType = "Object";
+					class PositionInfo
+					{
+						position[] = {7749.593,13.856815,11010.147};
+						angles[] = {6.2805333,1.564096,0.012000273};
+					};
+					side = "West";
+					flags = 2;
+					class Attributes
+					{
+						skill = 0.6;
+						name = "playerWest43";
+						isPlayable = 1;
+					};
+					id = 133;
+					type = "B_Soldier_F";
+				};
+			};
+			class Attributes{};
+			id = 132;
+		};
+		class Item91
+		{
+			dataType = "Group";
+			side = "West";
+			class Entities
+			{
+				items = 1;
+				class Item0
+				{
+					dataType = "Object";
+					class PositionInfo
+					{
+						position[] = {7746.982,13.835486,11012.602};
+						angles[] = {6.2805333,1.597446,0.005326526};
+					};
+					side = "West";
+					flags = 2;
+					class Attributes
+					{
+						skill = 0.6;
+						name = "playerWest44";
+						isPlayable = 1;
+					};
+					id = 135;
+					type = "B_Soldier_F";
+				};
+			};
+			class Attributes{};
+			id = 134;
+		};
+		class Item92
+		{
+			dataType = "Group";
+			side = "West";
+			class Entities
+			{
+				items = 1;
+				class Item0
+				{
+					dataType = "Object";
+					class PositionInfo
+					{
+						position[] = {7747.031,13.841176,11014.638};
+						angles[] = {6.2805333,1.597446,0.005326526};
+					};
+					side = "West";
+					flags = 2;
+					class Attributes
+					{
+						skill = 0.6;
+						name = "playerWest45";
+						isPlayable = 1;
+					};
+					id = 137;
+					type = "B_Soldier_F";
+				};
+			};
+			class Attributes{};
+			id = 136;
+		};
+		class Item93
+		{
+			dataType = "Group";
+			side = "West";
+			class Entities
+			{
+				items = 1;
+				class Item0
+				{
+					dataType = "Object";
+					class PositionInfo
+					{
+						position[] = {7747.096,13.846766,11016.6045};
+						angles[] = {6.2805333,1.597446,0.005326526};
+					};
+					side = "West";
+					flags = 2;
+					class Attributes
+					{
+						skill = 0.6;
+						name = "playerWest46";
+						isPlayable = 1;
+					};
+					id = 139;
+					type = "B_Soldier_F";
+				};
+			};
+			class Attributes{};
+			id = 138;
+		};
+		class Item94
+		{
+			dataType = "Group";
+			side = "West";
+			class Entities
+			{
+				items = 1;
+				class Item0
+				{
+					dataType = "Object";
+					class PositionInfo
+					{
+						position[] = {7747.1553,13.867853,11018.603};
+						angles[] = {6.2658563,1.597446,0.005326526};
+					};
+					side = "West";
+					flags = 2;
+					class Attributes
+					{
+						skill = 0.6;
+						name = "playerWest47";
+						isPlayable = 1;
+					};
+					id = 141;
+					type = "B_Soldier_F";
+				};
+			};
+			class Attributes{};
+			id = 140;
+		};
+		class Item95
+		{
+			dataType = "Group";
+			side = "West";
+			class Entities
+			{
+				items = 1;
+				class Item0
+				{
+					dataType = "Object";
+					class PositionInfo
+					{
+						position[] = {7747.214,13.9027605,11020.598};
+						angles[] = {6.2658563,1.597446,0.005326526};
+					};
+					side = "West";
+					flags = 2;
+					class Attributes
+					{
+						skill = 0.6;
+						name = "playerWest48";
+						isPlayable = 1;
+					};
+					id = 143;
+					type = "B_Soldier_F";
+				};
+			};
+			class Attributes{};
+			id = 142;
+		};
+		class Item96
+		{
+			dataType = "Group";
+			side = "West";
+			class Entities
+			{
+				items = 1;
+				class Item0
+				{
+					dataType = "Object";
+					class PositionInfo
+					{
+						position[] = {7747.276,13.93856,11022.645};
+						angles[] = {6.2658563,1.597446,0.005326526};
+					};
+					side = "West";
+					flags = 2;
+					class Attributes
+					{
+						skill = 0.6;
+						name = "playerWest49";
+						isPlayable = 1;
+					};
+					id = 145;
+					type = "B_Soldier_F";
+				};
+			};
+			class Attributes{};
+			id = 144;
+		};
+		class Item97
+		{
+			dataType = "Group";
+			side = "West";
+			class Entities
+			{
+				items = 1;
+				class Item0
+				{
+					dataType = "Object";
+					class PositionInfo
+					{
+						position[] = {7747.3267,13.973152,11024.624};
+						angles[] = {6.2658563,1.597446,0.005326526};
+					};
+					side = "West";
+					flags = 2;
+					class Attributes
+					{
+						skill = 0.6;
+						name = "playerWest50";
+						isPlayable = 1;
+					};
+					id = 147;
+					type = "B_Soldier_F";
+				};
+			};
+			class Attributes{};
+			id = 146;
+		};
+		class Item98
+		{
+			dataType = "Group";
+			side = "East";
+			class Entities
+			{
+				items = 1;
+				class Item0
+				{
+					dataType = "Object";
+					class PositionInfo
+					{
+						position[] = {10379.155,26.669283,13180.826};
+						angles[] = {6.169018,0.53301144,0.0093350215};
+					};
+					side = "East";
+					flags = 2;
+					class Attributes
+					{
+						skill = 0.6;
+						name = "playerEast2";
+						isPlayable = 1;
+					};
+					id = 149;
+					type = "O_Soldier_F";
+				};
+			};
+			class Attributes{};
+			id = 148;
+		};
+		class Item99
+		{
+			dataType = "Group";
+			side = "East";
+			class Entities
+			{
+				items = 1;
+				class Item0
+				{
+					dataType = "Object";
+					class PositionInfo
+					{
+						position[] = {10377.438,26.77063,13181.85};
+						angles[] = {6.169018,0.53301144,0.0093350215};
+					};
+					side = "East";
+					flags = 2;
+					class Attributes
+					{
+						skill = 0.6;
+						name = "playerEast3";
+						isPlayable = 1;
+					};
+					id = 151;
+					type = "O_Soldier_F";
+				};
+			};
+			class Attributes{};
+			id = 150;
+		};
+		class Item100
+		{
+			dataType = "Group";
+			side = "East";
+			class Entities
+			{
+				items = 1;
+				class Item0
+				{
+					dataType = "Object";
+					class PositionInfo
+					{
+						position[] = {10375.7,26.871563,13182.871};
+						angles[] = {6.169018,0.53301144,0.0093350215};
+					};
+					side = "East";
+					flags = 2;
+					class Attributes
+					{
+						skill = 0.6;
+						name = "playerEast4";
+						isPlayable = 1;
+					};
+					id = 153;
+					type = "O_Soldier_F";
+				};
+			};
+			class Attributes{};
+			id = 152;
+		};
+		class Item101
+		{
+			dataType = "Group";
+			side = "East";
+			class Entities
+			{
+				items = 1;
+				class Item0
+				{
+					dataType = "Object";
+					class PositionInfo
+					{
+						position[] = {10373.994,26.971437,13183.881};
+						angles[] = {6.169018,0.53301144,0.0093350215};
+					};
+					side = "East";
+					flags = 2;
+					class Attributes
+					{
+						skill = 0.6;
+						name = "playerEast5";
+						isPlayable = 1;
+					};
+					id = 155;
+					type = "O_Soldier_F";
+				};
+			};
+			class Attributes{};
+			id = 154;
+		};
+		class Item102
+		{
+			dataType = "Group";
+			side = "East";
+			class Entities
+			{
+				items = 1;
+				class Item0
+				{
+					dataType = "Object";
+					class PositionInfo
+					{
+						position[] = {10372.27,27.028305,13184.913};
+						angles[] = {6.169018,0.53301144,0.20379739};
+					};
+					side = "East";
+					flags = 2;
+					class Attributes
+					{
+						skill = 0.6;
+						name = "playerEast6";
+						isPlayable = 1;
+					};
+					id = 157;
+					type = "O_Soldier_F";
+				};
+			};
+			class Attributes{};
+			id = 156;
+		};
+		class Item103
+		{
+			dataType = "Group";
+			side = "East";
+			class Entities
+			{
+				items = 1;
+				class Item0
+				{
+					dataType = "Object";
+					class PositionInfo
+					{
+						position[] = {10370.521,26.896694,13185.931};
+						angles[] = {6.0451207,0.53301144,0.20379768};
+					};
+					side = "East";
+					flags = 2;
+					class Attributes
+					{
+						skill = 0.6;
+						name = "playerEast7";
+						isPlayable = 1;
+					};
+					id = 159;
+					type = "O_Soldier_F";
+				};
+			};
+			class Attributes{};
+			id = 158;
+		};
+		class Item104
+		{
+			dataType = "Group";
+			side = "East";
+			class Entities
+			{
+				items = 1;
+				class Item0
+				{
+					dataType = "Object";
+					class PositionInfo
+					{
+						position[] = {10368.809,26.786404,13186.936};
+						angles[] = {6.0451207,0.53301144,0.20379768};
+					};
+					side = "East";
+					flags = 2;
+					class Attributes
+					{
+						skill = 0.6;
+						name = "playerEast8";
+						isPlayable = 1;
+					};
+					id = 161;
+					type = "O_Soldier_F";
+				};
+			};
+			class Attributes{};
+			id = 160;
+		};
+		class Item105
+		{
+			dataType = "Group";
+			side = "East";
+			class Entities
+			{
+				items = 1;
+				class Item0
+				{
+					dataType = "Object";
+					class PositionInfo
+					{
+						position[] = {10367.069,26.676178,13187.962};
+						angles[] = {6.0451207,0.53301144,0.20379768};
+					};
+					side = "East";
+					flags = 2;
+					class Attributes
+					{
+						skill = 0.6;
+						name = "playerEast9";
+						isPlayable = 1;
+					};
+					id = 163;
+					type = "O_Soldier_F";
+				};
+			};
+			class Attributes{};
+			id = 162;
+		};
+		class Item106
+		{
+			dataType = "Group";
+			side = "East";
+			class Entities
+			{
+				items = 1;
+				class Item0
+				{
+					dataType = "Object";
+					class PositionInfo
+					{
+						position[] = {10365.345,26.566315,13188.979};
+						angles[] = {6.0451207,0.53301525,0.20379768};
+					};
+					side = "East";
+					flags = 2;
+					class Attributes
+					{
+						skill = 0.6;
+						name = "playerEast10";
+						isPlayable = 1;
+					};
+					id = 165;
+					type = "O_Soldier_F";
+				};
+			};
+			class Attributes{};
+			id = 164;
+		};
+		class Item107
+		{
+			dataType = "Group";
+			side = "East";
+			class Entities
+			{
+				items = 1;
+				class Item0
+				{
+					dataType = "Object";
+					class PositionInfo
+					{
+						position[] = {10379.359,26.350098,13177.243};
+						angles[] = {0.17680109,0.53301144,0.009328634};
+					};
+					side = "East";
+					flags = 2;
+					class Attributes
+					{
+						skill = 0.6;
+						name = "playerEast11";
+						isPlayable = 1;
+					};
+					id = 167;
+					type = "O_Soldier_F";
+				};
+			};
+			class Attributes{};
+			id = 166;
+		};
+		class Item108
+		{
+			dataType = "Group";
+			side = "East";
+			class Entities
+			{
+				items = 1;
+				class Item0
+				{
+					dataType = "Object";
+					class PositionInfo
+					{
+						position[] = {10377.624,26.362198,13178.272};
+						angles[] = {6.169018,0.53301144,0.0093350215};
+					};
+					side = "East";
+					flags = 2;
+					class Attributes
+					{
+						skill = 0.6;
+						name = "playerEast12";
+						isPlayable = 1;
+					};
+					id = 169;
+					type = "O_Soldier_F";
+				};
+			};
+			class Attributes{};
+			id = 168;
+		};
+		class Item109
+		{
+			dataType = "Group";
+			side = "East";
+			class Entities
+			{
+				items = 1;
+				class Item0
+				{
+					dataType = "Object";
+					class PositionInfo
+					{
+						position[] = {10375.906,26.461962,13179.282};
+						angles[] = {6.169018,0.53301144,0.0093350215};
+					};
+					side = "East";
+					flags = 2;
+					class Attributes
+					{
+						skill = 0.6;
+						name = "playerEast13";
+						isPlayable = 1;
+					};
+					id = 171;
+					type = "O_Soldier_F";
+				};
+			};
+			class Attributes{};
+			id = 170;
+		};
+		class Item110
+		{
+			dataType = "Group";
+			side = "East";
+			class Entities
+			{
+				items = 1;
+				class Item0
+				{
+					dataType = "Object";
+					class PositionInfo
+					{
+						position[] = {10374.173,26.565357,13180.325};
+						angles[] = {6.169018,0.53301144,0.0093350215};
+					};
+					side = "East";
+					flags = 2;
+					class Attributes
+					{
+						skill = 0.6;
+						name = "playerEast14";
+						isPlayable = 1;
+					};
+					id = 173;
+					type = "O_Soldier_F";
+				};
+			};
+			class Attributes{};
+			id = 172;
+		};
+		class Item111
+		{
+			dataType = "Group";
+			side = "East";
+			class Entities
+			{
+				items = 1;
+				class Item0
+				{
+					dataType = "Object";
+					class PositionInfo
+					{
+						position[] = {10372.455,26.655924,13181.33};
+						angles[] = {6.169018,0.53301144,0.20379739};
+					};
+					side = "East";
+					flags = 2;
+					class Attributes
+					{
+						skill = 0.6;
+						name = "playerEast15";
+						isPlayable = 1;
+					};
+					id = 175;
+					type = "O_Soldier_F";
+				};
+			};
+			class Attributes{};
+			id = 174;
+		};
+		class Item112
+		{
+			dataType = "Group";
+			side = "East";
+			class Entities
+			{
+				items = 1;
+				class Item0
+				{
+					dataType = "Object";
+					class PositionInfo
+					{
+						position[] = {10370.732,26.415733,13182.341};
+						angles[] = {6.169018,0.53301144,0.20379739};
+					};
+					side = "East";
+					flags = 2;
+					class Attributes
+					{
+						skill = 0.6;
+						name = "playerEast16";
+						isPlayable = 1;
+					};
+					id = 177;
+					type = "O_Soldier_F";
+				};
+			};
+			class Attributes{};
+			id = 176;
+		};
+		class Item113
+		{
+			dataType = "Group";
+			side = "East";
+			class Entities
+			{
+				items = 1;
+				class Item0
+				{
+					dataType = "Object";
+					class PositionInfo
+					{
+						position[] = {10368.982,26.171228,13183.363};
+						angles[] = {6.169018,0.53301144,0.20379739};
+					};
+					side = "East";
+					flags = 2;
+					class Attributes
+					{
+						skill = 0.6;
+						name = "playerEast17";
+						isPlayable = 1;
+					};
+					id = 179;
+					type = "O_Soldier_F";
+				};
+			};
+			class Attributes{};
+			id = 178;
+		};
+		class Item114
+		{
+			dataType = "Group";
+			side = "East";
+			class Entities
+			{
+				items = 1;
+				class Item0
+				{
+					dataType = "Object";
+					class PositionInfo
+					{
+						position[] = {10367.269,25.934607,13184.389};
+						angles[] = {6.169018,0.53301144,0.20379739};
+					};
+					side = "East";
+					flags = 2;
+					class Attributes
+					{
+						skill = 0.6;
+						name = "playerEast18";
+						isPlayable = 1;
+					};
+					id = 181;
+					type = "O_Soldier_F";
+				};
+			};
+			class Attributes{};
+			id = 180;
+		};
+		class Item115
+		{
+			dataType = "Group";
+			side = "East";
+			class Entities
+			{
+				items = 1;
+				class Item0
+				{
+					dataType = "Object";
+					class PositionInfo
+					{
+						position[] = {10365.525,25.736025,13185.403};
+						angles[] = {6.0451207,0.53301144,0.20379768};
+					};
+					side = "East";
+					flags = 2;
+					class Attributes
+					{
+						skill = 0.6;
+						name = "playerEast19";
+						isPlayable = 1;
+					};
+					id = 183;
+					type = "O_Soldier_F";
+				};
+			};
+			class Attributes{};
+			id = 182;
+		};
+		class Item116
+		{
+			dataType = "Group";
+			side = "East";
+			class Entities
+			{
+				items = 1;
+				class Item0
+				{
+					dataType = "Object";
+					class PositionInfo
+					{
+						position[] = {10363.83,25.810785,13186.409};
+						angles[] = {6.0451207,0.53301144,0.051953323};
+					};
+					side = "East";
+					flags = 2;
+					class Attributes
+					{
+						skill = 0.6;
+						name = "playerEast20";
+						isPlayable = 1;
+					};
+					id = 185;
+					type = "O_Soldier_F";
+				};
+			};
+			class Attributes{};
+			id = 184;
+		};
+		class Item117
+		{
+			dataType = "Group";
+			side = "East";
+			class Entities
+			{
+				items = 1;
+				class Item0
+				{
+					dataType = "Object";
+					class PositionInfo
+					{
+						position[] = {10377.847,26.793009,13174.686};
+						angles[] = {0.17680109,0.53301144,0.009328634};
+					};
+					side = "East";
+					flags = 2;
+					class Attributes
+					{
+						skill = 0.6;
+						name = "playerEast21";
+						isPlayable = 1;
+					};
+					id = 187;
+					type = "O_Soldier_F";
+				};
+			};
+			class Attributes{};
+			id = 186;
+		};
+		class Item118
+		{
+			dataType = "Group";
+			side = "East";
+			class Entities
+			{
+				items = 1;
+				class Item0
+				{
+					dataType = "Object";
+					class PositionInfo
+					{
+						position[] = {10376.092,26.594896,13175.702};
+						angles[] = {0.17680109,0.53301144,0.009328634};
+					};
+					side = "East";
+					flags = 2;
+					class Attributes
+					{
+						skill = 0.6;
+						name = "playerEast22";
+						isPlayable = 1;
+					};
+					id = 189;
+					type = "O_Soldier_F";
+				};
+			};
+			class Attributes{};
+			id = 188;
+		};
+		class Item119
+		{
+			dataType = "Group";
+			side = "East";
+			class Entities
+			{
+				items = 1;
+				class Item0
+				{
+					dataType = "Object";
+					class PositionInfo
+					{
+						position[] = {10374.369,26.400356,13176.701};
+						angles[] = {0.17680109,0.53301144,0.009328634};
+					};
+					side = "East";
+					flags = 2;
+					class Attributes
+					{
+						skill = 0.6;
+						name = "playerEast23";
+						isPlayable = 1;
+					};
+					id = 191;
+					type = "O_Soldier_F";
+				};
+			};
+			class Attributes{};
+			id = 190;
+		};
+		class Item120
+		{
+			dataType = "Group";
+			side = "East";
+			class Entities
+			{
+				items = 1;
+				class Item0
+				{
+					dataType = "Object";
+					class PositionInfo
+					{
+						position[] = {10372.628,26.25342,13177.73};
+						angles[] = {6.169018,0.53301144,0.0093350215};
+					};
+					side = "East";
+					flags = 2;
+					class Attributes
+					{
+						skill = 0.6;
+						name = "playerEast24";
+						isPlayable = 1;
+					};
+					id = 193;
+					type = "O_Soldier_F";
+				};
+			};
+			class Attributes{};
+			id = 192;
+		};
+		class Item121
+		{
+			dataType = "Group";
+			side = "East";
+			class Entities
+			{
+				items = 1;
+				class Item0
+				{
+					dataType = "Object";
+					class PositionInfo
+					{
+						position[] = {10370.921,26.098825,13178.733};
+						angles[] = {0.031988446,0.53301144,0.059927464};
+					};
+					side = "East";
+					flags = 2;
+					class Attributes
+					{
+						skill = 0.6;
+						name = "playerEast25";
+						isPlayable = 1;
+					};
+					id = 195;
+					type = "O_Soldier_F";
+				};
+			};
+			class Attributes{};
+			id = 194;
+		};
+		class Item122
+		{
+			dataType = "Group";
+			side = "East";
+			class Entities
+			{
+				items = 1;
+				class Item0
+				{
+					dataType = "Object";
+					class PositionInfo
+					{
+						position[] = {10369.223,25.96347,13179.779};
+						angles[] = {0.031988446,0.53301144,0.059927464};
+					};
+					side = "East";
+					flags = 2;
+					class Attributes
+					{
+						skill = 0.6;
+						name = "playerEast26";
+						isPlayable = 1;
+					};
+					id = 197;
+					type = "O_Soldier_F";
+				};
+			};
+			class Attributes{};
+			id = 196;
+		};
+		class Item123
+		{
+			dataType = "Group";
+			side = "East";
+			class Entities
+			{
+				items = 1;
+				class Item0
+				{
+					dataType = "Object";
+					class PositionInfo
+					{
+						position[] = {10367.493,25.827303,13180.792};
+						angles[] = {0.031988446,0.53301144,0.059927464};
+					};
+					side = "East";
+					flags = 2;
+					class Attributes
+					{
+						skill = 0.6;
+						name = "playerEast27";
+						isPlayable = 1;
+					};
+					id = 199;
+					type = "O_Soldier_F";
+				};
+			};
+			class Attributes{};
+			id = 198;
+		};
+		class Item124
+		{
+			dataType = "Group";
+			side = "East";
+			class Entities
+			{
+				items = 1;
+				class Item0
+				{
+					dataType = "Object";
+					class PositionInfo
+					{
+						position[] = {10365.767,25.691093,13181.811};
+						angles[] = {0.031988446,0.53301144,0.059927464};
+					};
+					side = "East";
+					flags = 2;
+					class Attributes
+					{
+						skill = 0.6;
+						name = "playerEast28";
+						isPlayable = 1;
+					};
+					id = 201;
+					type = "O_Soldier_F";
+				};
+			};
+			class Attributes{};
+			id = 200;
+		};
+		class Item125
+		{
+			dataType = "Group";
+			side = "East";
+			class Entities
+			{
+				items = 1;
+				class Item0
+				{
+					dataType = "Object";
+					class PositionInfo
+					{
+						position[] = {10364.014,25.79555,13182.819};
+						angles[] = {0.03199031,0.53301144,6.0999317};
+					};
+					side = "East";
+					flags = 2;
+					class Attributes
+					{
+						skill = 0.6;
+						name = "playerEast29";
+						isPlayable = 1;
+					};
+					id = 203;
+					type = "O_Soldier_F";
+				};
+			};
+			class Attributes{};
+			id = 202;
+		};
+		class Item126
+		{
+			dataType = "Group";
+			side = "East";
+			class Entities
+			{
+				items = 1;
+				class Item0
+				{
+					dataType = "Object";
+					class PositionInfo
+					{
+						position[] = {10362.295,26.081457,13183.837};
+						angles[] = {0.03199031,0.53301144,6.0999317};
+					};
+					side = "East";
+					flags = 2;
+					class Attributes
+					{
+						skill = 0.6;
+						name = "playerEast30";
+						isPlayable = 1;
+					};
+					id = 205;
+					type = "O_Soldier_F";
+				};
+			};
+			class Attributes{};
+			id = 204;
+		};
+		class Item127
+		{
+			dataType = "Group";
+			side = "East";
+			class Entities
+			{
+				items = 1;
+				class Item0
+				{
+					dataType = "Object";
+					class PositionInfo
+					{
+						position[] = {10376.319,27.052996,13172.112};
+						angles[] = {0.063912325,0.53301144,0.12336996};
+					};
+					side = "East";
+					flags = 2;
+					class Attributes
+					{
+						skill = 0.6;
+						name = "playerEast31";
+						isPlayable = 1;
+					};
+					id = 207;
+					type = "O_Soldier_F";
+				};
+			};
+			class Attributes{};
+			id = 206;
+		};
+		class Item128
+		{
+			dataType = "Group";
+			side = "East";
+			class Entities
+			{
+				items = 1;
+				class Item0
+				{
+					dataType = "Object";
+					class PositionInfo
+					{
+						position[] = {10374.587,26.774397,13173.109};
+						angles[] = {0.063912325,0.53301144,0.12336996};
+					};
+					side = "East";
+					flags = 2;
+					class Attributes
+					{
+						skill = 0.6;
+						name = "playerEast32";
+						isPlayable = 1;
+					};
+					id = 209;
+					type = "O_Soldier_F";
+				};
+			};
+			class Attributes{};
+			id = 208;
+		};
+		class Item129
+		{
+			dataType = "Group";
+			side = "East";
+			class Entities
+			{
+				items = 1;
+				class Item0
+				{
+					dataType = "Object";
+					class PositionInfo
+					{
+						position[] = {10372.864,26.495703,13174.126};
+						angles[] = {0.063912325,0.53301144,0.12336996};
+					};
+					side = "East";
+					flags = 2;
+					class Attributes
+					{
+						skill = 0.6;
+						name = "playerEast33";
+						isPlayable = 1;
+					};
+					id = 211;
+					type = "O_Soldier_F";
+				};
+			};
+			class Attributes{};
+			id = 210;
+		};
+		class Item130
+		{
+			dataType = "Group";
+			side = "East";
+			class Entities
+			{
+				items = 1;
+				class Item0
+				{
+					dataType = "Object";
+					class PositionInfo
+					{
+						position[] = {10371.132,26.30224,13175.16};
+						angles[] = {0.063913256,0.53301144,0.059927464};
+					};
+					side = "East";
+					flags = 2;
+					class Attributes
+					{
+						skill = 0.6;
+						name = "playerEast34";
+						isPlayable = 1;
+					};
+					id = 213;
+					type = "O_Soldier_F";
+				};
+			};
+			class Attributes{};
+			id = 212;
+		};
+		class Item131
+		{
+			dataType = "Group";
+			side = "East";
+			class Entities
+			{
+				items = 1;
+				class Item0
+				{
+					dataType = "Object";
+					class PositionInfo
+					{
+						position[] = {10369.418,26.134722,13176.171};
+						angles[] = {0.063913256,0.53301144,0.059927464};
+					};
+					side = "East";
+					flags = 2;
+					class Attributes
+					{
+						skill = 0.6;
+						name = "playerEast35";
+						isPlayable = 1;
+					};
+					id = 215;
+					type = "O_Soldier_F";
+				};
+			};
+			class Attributes{};
+			id = 214;
+		};
+		class Item132
+		{
+			dataType = "Group";
+			side = "East";
+			class Entities
+			{
+				items = 1;
+				class Item0
+				{
+					dataType = "Object";
+					class PositionInfo
+					{
+						position[] = {10367.694,25.966185,13177.189};
+						angles[] = {0.063913256,0.53301144,0.059927464};
+					};
+					side = "East";
+					flags = 2;
+					class Attributes
+					{
+						skill = 0.6;
+						name = "playerEast36";
+						isPlayable = 1;
+					};
+					id = 217;
+					type = "O_Soldier_F";
+				};
+			};
+			class Attributes{};
+			id = 216;
+		};
+		class Item133
+		{
+			dataType = "Group";
+			side = "East";
+			class Entities
+			{
+				items = 1;
+				class Item0
+				{
+					dataType = "Object";
+					class PositionInfo
+					{
+						position[] = {10365.955,25.81743,13178.217};
+						angles[] = {0.031988446,0.53301144,0.059927464};
+					};
+					side = "East";
+					flags = 2;
+					class Attributes
+					{
+						skill = 0.6;
+						name = "playerEast37";
+						isPlayable = 1;
+					};
+					id = 219;
+					type = "O_Soldier_F";
+				};
+			};
+			class Attributes{};
+			id = 218;
+		};
+		class Item134
+		{
+			dataType = "Group";
+			side = "East";
+			class Entities
+			{
+				items = 1;
+				class Item0
+				{
+					dataType = "Object";
+					class PositionInfo
+					{
+						position[] = {10364.237,25.868647,13179.235};
+						angles[] = {0.03199031,0.53301144,6.0999317};
+					};
+					side = "East";
+					flags = 2;
+					class Attributes
+					{
+						skill = 0.6;
+						name = "playerEast38";
+						isPlayable = 1;
+					};
+					id = 221;
+					type = "O_Soldier_F";
+				};
+			};
+			class Attributes{};
+			id = 220;
+		};
+		class Item135
+		{
+			dataType = "Group";
+			side = "East";
+			class Entities
+			{
+				items = 1;
+				class Item0
+				{
+					dataType = "Object";
+					class PositionInfo
+					{
+						position[] = {10362.494,26.158957,13180.259};
+						angles[] = {0.03199031,0.53301144,6.0999317};
+					};
+					side = "East";
+					flags = 2;
+					class Attributes
+					{
+						skill = 0.6;
+						name = "playerEast39";
+						isPlayable = 1;
+					};
+					id = 223;
+					type = "O_Soldier_F";
+				};
+			};
+			class Attributes{};
+			id = 222;
+		};
+		class Item136
+		{
+			dataType = "Group";
+			side = "East";
+			class Entities
+			{
+				items = 1;
+				class Item0
+				{
+					dataType = "Object";
+					class PositionInfo
+					{
+						position[] = {10360.793,26.34254,13181.271};
+						angles[] = {6.111557,0.53301144,0.019996032};
+					};
+					side = "East";
+					flags = 2;
+					class Attributes
+					{
+						skill = 0.6;
+						name = "playerEast40";
+						isPlayable = 1;
+					};
+					id = 225;
+					type = "O_Soldier_F";
+				};
+			};
+			class Attributes{};
+			id = 224;
+		};
+		class Item137
+		{
+			dataType = "Group";
+			side = "East";
+			class Entities
+			{
+				items = 1;
+				class Item0
+				{
+					dataType = "Object";
+					class PositionInfo
+					{
+						position[] = {10375.162,27.050404,13169.446};
+						angles[] = {0.0146689,0.53301144,0.123370446};
+					};
+					side = "East";
+					flags = 2;
+					class Attributes
+					{
+						skill = 0.6;
+						name = "playerEast41";
+						isPlayable = 1;
+					};
+					id = 227;
+					type = "O_Soldier_F";
+				};
+			};
+			class Attributes{};
+			id = 226;
+		};
+		class Item138
+		{
+			dataType = "Group";
+			side = "East";
+			class Entities
+			{
+				items = 1;
+				class Item0
+				{
+					dataType = "Object";
+					class PositionInfo
+					{
+						position[] = {10373.065,26.749134,13170.557};
+						angles[] = {0.063912325,0.53301144,0.12336996};
+					};
+					side = "East";
+					flags = 2;
+					class Attributes
+					{
+						skill = 0.6;
+						name = "playerEast42";
+						isPlayable = 1;
+					};
+					id = 229;
+					type = "O_Soldier_F";
+				};
+			};
+			class Attributes{};
+			id = 228;
+		};
+		class Item139
+		{
+			dataType = "Group";
+			side = "East";
+			class Entities
+			{
+				items = 1;
+				class Item0
+				{
+					dataType = "Object";
+					class PositionInfo
+					{
+						position[] = {10371.347,26.545248,13171.565};
+						angles[] = {0.063913256,0.53301144,0.059927464};
+					};
+					side = "East";
+					flags = 2;
+					class Attributes
+					{
+						skill = 0.6;
+						name = "playerEast43";
+						isPlayable = 1;
+					};
+					id = 231;
+					type = "O_Soldier_F";
+				};
+			};
+			class Attributes{};
+			id = 230;
+		};
+		class Item140
+		{
+			dataType = "Group";
+			side = "East";
+			class Entities
+			{
+				items = 1;
+				class Item0
+				{
+					dataType = "Object";
+					class PositionInfo
+					{
+						position[] = {10369.611,26.355585,13172.59};
+						angles[] = {0.0066682254,0.53301144,0.1167993};
+					};
+					side = "East";
+					flags = 2;
+					class Attributes
+					{
+						skill = 0.6;
+						name = "playerEast44";
+						isPlayable = 1;
+					};
+					id = 233;
+					type = "O_Soldier_F";
+				};
+			};
+			class Attributes{};
+			id = 232;
+		};
+		class Item141
+		{
+			dataType = "Group";
+			side = "East";
+			class Entities
+			{
+				items = 1;
+				class Item0
+				{
+					dataType = "Object";
+					class PositionInfo
+					{
+						position[] = {10367.894,26.147408,13173.588};
+						angles[] = {0.0066682254,0.53301144,0.1167993};
+					};
+					side = "East";
+					flags = 2;
+					class Attributes
+					{
+						skill = 0.6;
+						name = "playerEast45";
+						isPlayable = 1;
+					};
+					id = 235;
+					type = "O_Soldier_F";
+				};
+			};
+			class Attributes{};
+			id = 234;
+		};
+		class Item142
+		{
+			dataType = "Group";
+			side = "East";
+			class Entities
+			{
+				items = 1;
+				class Item0
+				{
+					dataType = "Object";
+					class PositionInfo
+					{
+						position[] = {10366.177,25.939083,13174.624};
+						angles[] = {0.0066682254,0.53301144,0.1167993};
+					};
+					side = "East";
+					flags = 2;
+					class Attributes
+					{
+						skill = 0.6;
+						name = "playerEast46";
+						isPlayable = 1;
+					};
+					id = 237;
+					type = "O_Soldier_F";
+				};
+			};
+			class Attributes{};
+			id = 236;
+		};
+		class Item143
+		{
+			dataType = "Group";
+			side = "East";
+			class Entities
+			{
+				items = 1;
+				class Item0
+				{
+					dataType = "Object";
+					class PositionInfo
+					{
+						position[] = {10364.429,25.782763,13175.64};
+						angles[] = {0.0066682254,0.53301144,0.019996032};
+					};
+					side = "East";
+					flags = 2;
+					class Attributes
+					{
+						skill = 0.6;
+						name = "playerEast47";
+						isPlayable = 1;
+					};
+					id = 239;
+					type = "O_Soldier_F";
+				};
+			};
+			class Attributes{};
+			id = 238;
+		};
+		class Item144
+		{
+			dataType = "Group";
+			side = "East";
+			class Entities
+			{
+				items = 1;
+				class Item0
+				{
+					dataType = "Object";
+					class PositionInfo
+					{
+						position[] = {10362.714,25.741705,13176.653};
+						angles[] = {0.0066682254,0.53301144,0.019996032};
+					};
+					side = "East";
+					flags = 2;
+					class Attributes
+					{
+						skill = 0.6;
+						name = "playerEast48";
+						isPlayable = 1;
+					};
+					id = 241;
+					type = "O_Soldier_F";
+				};
+			};
+			class Attributes{};
+			id = 240;
+		};
+		class Item145
+		{
+			dataType = "Group";
+			side = "East";
+			class Entities
+			{
+				items = 1;
+				class Item0
+				{
+					dataType = "Object";
+					class PositionInfo
+					{
+						position[] = {10360.971,25.723724,13177.681};
+						angles[] = {6.111557,0.53301144,0.019996032};
+					};
+					side = "East";
+					flags = 2;
+					class Attributes
+					{
+						skill = 0.6;
+						name = "playerEast49";
+						isPlayable = 1;
+					};
+					id = 243;
+					type = "O_Soldier_F";
+				};
+			};
+			class Attributes{};
+			id = 242;
+		};
+		class Item146
+		{
+			dataType = "Group";
+			side = "East";
+			class Entities
+			{
+				items = 1;
+				class Item0
+				{
+					dataType = "Object";
+					class PositionInfo
+					{
+						position[] = {10359.258,25.86339,13178.685};
+						angles[] = {6.111557,0.53301144,0.019996032};
+					};
+					side = "East";
+					flags = 2;
+					class Attributes
+					{
+						skill = 0.6;
+						name = "playerEast50";
+						isPlayable = 1;
+					};
+					id = 245;
+					type = "O_Soldier_F";
+				};
+			};
+			class Attributes{};
+			id = 244;
+		};
+		class Item147
+		{
+			dataType = "Group";
+			side = "East";
+			class Entities
+			{
+				items = 1;
+				class Item0
+				{
+					dataType = "Object";
+					class PositionInfo
+					{
+						position[] = {10380.899,26.592207,13179.823};
+						angles[] = {6.169018,0.53301144,0.033321146};
+					};
+					side = "East";
+					flags = 2;
+					class Attributes
+					{
+						skill = 0.6;
+						name = "playerEast1";
+						isPlayable = 1;
+					};
+					id = 247;
+					type = "O_Soldier_F";
+				};
+			};
+			class Attributes{};
+			id = 246;
+		};
+		class Item148
+		{
+			dataType = "Logic";
+			class PositionInfo
+			{
+				position[] = {7342.0137,-0.047716442,10742.546};
+			};
+			name = "server";
+			id = 248;
+			type = "Logic";
+		};
+		class Item149
+		{
+			dataType = "Logic";
+			class PositionInfo
+			{
+				position[] = {7328.659,0.004090637,10734.849};
+			};
+			name = "TB_logic";
+			init = "this enableSimulation false";
+			id = 249;
+			type = "Logic";
+		};
+		class Item150
+		{
+			dataType = "Logic";
+			class PositionInfo
+			{
+				position[] = {7777.023,12.796205,11021.814};
+			};
+			id = 250;
+			type = "ModuleChemlight_F";
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property = "ModuleChemlight_F_Type";
+					expression = "_this setVariable ['Type',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[] = {"STRING"};
+							};
+							value = "Chemlight_Green";
+						};
+					};
+				};
+				nAttributes = 1;
+			};
+		};
+		class Item151
+		{
+			dataType = "Logic";
+			class PositionInfo
+			{
+				position[] = {10372.364,27.568022,13192.232};
+			};
+			id = 251;
+			type = "ModuleChemlight_F";
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property = "ModuleChemlight_F_Type";
+					expression = "_this setVariable ['Type',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[] = {"STRING"};
+							};
+							value = "Chemlight_Red";
+						};
+					};
+				};
+				nAttributes = 1;
+			};
+		};
+		class Item152
+		{
+			dataType = "Object";
+			class PositionInfo
+			{
+				position[] = {8986.467,28.762016,12047.295};
+				angles[] = {6.2245874,0.32822293,0.005326526};
+			};
+			side = "Empty";
+			class Attributes{};
+			id = 252;
+			type = "BMP2Wreck";
+		};
+		class Item153
+		{
+			dataType = "Object";
+			class PositionInfo
+			{
+				position[] = {8990.07,28.042698,12027.665};
+				angles[] = {6.2551923,5.8506794,6.249864};
+			};
+			side = "Empty";
+			class Attributes{};
+			id = 253;
+			type = "HMMWVWreck";
+		};
+		class Item154
+		{
+			dataType = "Object";
+			class PositionInfo
+			{
+				position[] = {8998.3,28.461702,12060.945};
+				angles[] = {6.235224,4.271736,6.175603};
+			};
+			side = "Empty";
+			class Attributes{};
+			id = 257;
+			type = "Land_Wreck_Skodovka_F";
+		};
+		class Item155
+		{
+			dataType = "Object";
+			class PositionInfo
+			{
+				position[] = {9006.718,30.882605,12089.546};
+				angles[] = {6.2245865,5.571983,6.2751846};
+			};
+			side = "Empty";
+			class Attributes{};
+			id = 258;
+			type = "Land_Wreck_Car2_F";
+		};
+		class Item156
+		{
+			dataType = "Object";
+			class PositionInfo
+			{
+				position[] = {9007.655,30.297358,12086.877};
+				angles[] = {6.2245865,0.0,6.199382};
+			};
+			side = "Empty";
+			class Attributes{};
+			id = 259;
+			type = "Land_GarbageBags_F";
+		};
+		class Item157
+		{
+			dataType = "Object";
+			class PositionInfo
+			{
+				position[] = {9005.876,30.261412,12088.529};
+				angles[] = {6.2245865,0.0,6.2751846};
+			};
+			side = "Empty";
+			class Attributes{};
+			id = 262;
+			type = "Land_JunkPile_F";
+		};
+		class Item158
+		{
+			dataType = "Object";
+			class PositionInfo
+			{
+				position[] = {9005.543,30.16555,12086.885};
+				angles[] = {6.2245865,4.117812,6.2751846};
+			};
+			side = "Empty";
+			class Attributes{};
+			id = 263;
+			type = "Land_Tyres_F";
+		};
+		class Item159
+		{
+			dataType = "Object";
+			class PositionInfo
+			{
+				position[] = {9003.448,30.005568,12087.252};
+				angles[] = {6.2245865,0.0,6.2751846};
+			};
+			side = "Empty";
+			class Attributes{};
+			id = 265;
+			type = "Land_Tyre_F";
+		};
+		class Item160
+		{
+			dataType = "Object";
+			class PositionInfo
+			{
+				position[] = {9006.736,29.7459,12083.272};
+				angles[] = {6.2245865,0.0,6.2751846};
+			};
+			side = "Empty";
+			class Attributes{};
+			id = 266;
+			type = "Land_Tyre_F";
+		};
+		class Item161
+		{
+			dataType = "Object";
+			class PositionInfo
+			{
+				position[] = {8982.82,28.628883,12050.089};
+				angles[] = {6.2245855,0.0,6.233892};
+			};
+			side = "Empty";
+			class Attributes{};
+			id = 267;
+			type = "Land_GarbageWashingMachine_F";
+		};
+		class Item162
+		{
+			dataType = "Object";
+			class PositionInfo
+			{
+				position[] = {8983.235,28.552975,12052.18};
+				angles[] = {6.2245855,0.0,6.233892};
+			};
+			side = "Empty";
+			class Attributes{};
+			id = 268;
+			type = "Land_JunkPile_F";
+		};
+		class Item163
+		{
+			dataType = "Object";
+			class PositionInfo
+			{
+				position[] = {8978.067,28.215864,12021.203};
+				angles[] = {6.2551947,0.9249085,6.2711854};
+			};
+			side = "Empty";
+			class Attributes{};
+			id = 271;
+			type = "Land_Wreck_Van_F";
+		};
+		class Item164
+		{
+			dataType = "Object";
+			class PositionInfo
+			{
+				position[] = {8980.99,27.647762,12020.484};
+				angles[] = {6.257858,0.0,6.2685165};
+			};
+			side = "Empty";
+			class Attributes{};
+			id = 272;
+			type = "Land_LuggageHeap_04_F";
+		};
+		class Item165
+		{
+			dataType = "Object";
+			class PositionInfo
+			{
+				position[] = {8981.809,27.67637,12021.692};
+				angles[] = {6.257858,0.0,6.2685165};
+			};
+			side = "Empty";
+			class Attributes{};
+			id = 273;
+			type = "Land_LuggageHeap_03_F";
+		};
+		class Item166
+		{
+			dataType = "Object";
+			class PositionInfo
+			{
+				position[] = {8980.857,27.485716,12019.198};
+				angles[] = {6.257858,0.0,6.2685165};
+			};
+			side = "Empty";
+			class Attributes{};
+			id = 274;
+			type = "Land_Canister_EP1";
+		};
+		class Item167
+		{
+			dataType = "Object";
+			class PositionInfo
+			{
+				position[] = {9004.08,30.451117,12088.028};
+				angles[] = {6.2245865,0.0,6.2751846};
+			};
+			side = "Empty";
+			class Attributes{};
+			id = 288;
+			type = "Land_jbad_tires";
+		};
+		class Item168
+		{
+			dataType = "Object";
+			class PositionInfo
+			{
+				position[] = {8993.018,29.222715,12035.549};
+				angles[] = {0.0,0.0,6.281494};
+			};
+			side = "Empty";
+			class Attributes{};
+			id = 292;
+			type = "Land_Sunshade_02_F";
+		};
+		class Item169
+		{
+			dataType = "Object";
+			class PositionInfo
+			{
+				position[] = {8991.985,29.141521,12032.596};
+				angles[] = {0.0,0.0,6.281494};
+			};
+			side = "Empty";
+			class Attributes{};
+			id = 295;
+			type = "Land_Sunshade_01_F";
+		};
+		class Item170
+		{
+			dataType = "Object";
+			class PositionInfo
+			{
+				position[] = {8994.928,28.056154,12035.142};
+				angles[] = {0.0,3.7916114,6.281494};
+			};
+			side = "Empty";
+			class Attributes{};
+			id = 296;
+			type = "Land_Sun_chair_F";
+		};
+		class Item171
+		{
+			dataType = "Object";
+			class PositionInfo
+			{
+				position[] = {8996.393,27.787064,12031.425};
+				angles[] = {0.0,0.0,6.281494};
+			};
+			side = "Empty";
+			class Attributes{};
+			id = 297;
+			type = "Land_Sun_chair_green_F";
+		};
+		class Item172
+		{
+			dataType = "Object";
+			class PositionInfo
+			{
+				position[] = {8994.096,29.30022,12071.25};
+				angles[] = {6.2392135,0.0,6.21529};
+			};
+			side = "Empty";
+			class Attributes{};
+			id = 304;
+			type = "OfficeTable_01_old_F";
+		};
+		class Item173
+		{
+			dataType = "Object";
+			class PositionInfo
+			{
+				position[] = {8995.282,29.202145,12071.207};
+				angles[] = {6.2392135,4.7181115,6.21529};
+			};
+			side = "Empty";
+			class Attributes{};
+			id = 305;
+			type = "Land_TableDesk_F";
+		};
+		class Item174
+		{
+			dataType = "Object";
+			class PositionInfo
+			{
+				position[] = {8994.533,29.486248,12070.406};
+				angles[] = {6.2392135,0.0,6.21529};
+			};
+			side = "Empty";
+			class Attributes{};
+			id = 306;
+			type = "Land_OfficeChair_01_F";
+		};
+		class Item175
+		{
+			dataType = "Object";
+			class PositionInfo
+			{
+				position[] = {8994.187,30.502083,12071.277};
+				angles[] = {6.239215,0.6922109,6.2152247};
+			};
+			side = "Empty";
+			class Attributes{};
+			id = 307;
+			type = "Land_OfficeCabinet_01_F";
+		};
+		class Item176
+		{
+			dataType = "Object";
+			class PositionInfo
+			{
+				position[] = {8996.253,29.503016,12071.026};
+				angles[] = {6.2392135,3.7112489,6.21529};
+			};
+			side = "Empty";
+			class Attributes{};
+			id = 309;
+			type = "Land_OfficeCabinet_01_F";
+		};
+		class Item177
+		{
+			dataType = "Object";
+			class PositionInfo
+			{
+				position[] = {8995.365,29.611757,12071.173};
+				angles[] = {6.2458305,0.0,6.222136};
+			};
+			side = "Empty";
+			class Attributes{};
+			id = 310;
+			type = "Land_ChairWood_F";
+		};
+		class Item178
+		{
+			dataType = "Object";
+			class PositionInfo
+			{
+				position[] = {8996.624,29.124868,12069.438};
+				angles[] = {6.2392135,0.0,6.21529};
+			};
+			side = "Empty";
+			class Attributes{};
+			id = 313;
+			type = "Land_LuggageHeap_04_F";
+		};
+		class Item179
+		{
+			dataType = "Object";
+			class PositionInfo
+			{
+				position[] = {8993.333,29.790312,12072.236};
+				angles[] = {6.2392135,2.3758745,6.21529};
+			};
+			side = "Empty";
+			class Attributes{};
+			id = 317;
+			type = "Land_Rack_F";
+		};
+		class Item180
+		{
+			dataType = "Object";
+			class PositionInfo
+			{
+				position[] = {8994.952,29.23488,12069.28};
+				angles[] = {6.2392135,0.0,6.21529};
+			};
+			side = "Empty";
+			class Attributes{};
+			id = 318;
+			type = "Land_ShelvesWooden_F";
+		};
+		class Item181
+		{
+			dataType = "Object";
+			class PositionInfo
+			{
+				position[] = {8995.052,29.20738,12068.461};
+				angles[] = {6.2392135,0.0,6.21529};
+			};
+			side = "Empty";
+			class Attributes{};
+			id = 321;
+			type = "Land_WheelieBin_01_F";
+		};
+		class Item182
+		{
+			dataType = "Object";
+			class PositionInfo
+			{
+				position[] = {9004.011,29.186363,12076.697};
+				angles[] = {6.195411,0.33738407,6.170334};
+			};
+			side = "Empty";
+			class Attributes{};
+			id = 328;
+			type = "Land_jbad_crates";
+		};
+		class Item183
+		{
+			dataType = "Object";
+			class PositionInfo
+			{
+				position[] = {8982.688,28.52997,12042.717};
+				angles[] = {6.252527,4.122477,6.239212};
+			};
+			side = "Empty";
+			class Attributes{};
+			id = 342;
+			type = "Land_Wreck_Car_F";
+		};
+		class Item184
+		{
+			dataType = "Object";
+			class PositionInfo
+			{
+				position[] = {9011.195,27.730955,12048.195};
+				angles[] = {6.2392135,0.0,6.21529};
+			};
+			side = "Empty";
+			class Attributes{};
+			id = 345;
+			type = "OfficeTable_01_old_F";
+		};
+		class Item185
+		{
+			dataType = "Object";
+			class PositionInfo
+			{
+				position[] = {9012.382,27.63288,12048.152};
+				angles[] = {6.2392135,4.7181115,6.21529};
+			};
+			side = "Empty";
+			class Attributes{};
+			id = 346;
+			type = "Land_TableDesk_F";
+		};
+		class Item186
+		{
+			dataType = "Object";
+			class PositionInfo
+			{
+				position[] = {9011.633,27.916983,12047.352};
+				angles[] = {6.2392135,0.0,6.21529};
+			};
+			side = "Empty";
+			class Attributes{};
+			id = 347;
+			type = "Land_OfficeChair_01_F";
+		};
+		class Item187
+		{
+			dataType = "Object";
+			class PositionInfo
+			{
+				position[] = {9011.286,28.932817,12048.223};
+				angles[] = {6.239215,0.6922109,6.2152247};
+			};
+			side = "Empty";
+			class Attributes{};
+			id = 348;
+			type = "Land_OfficeCabinet_01_F";
+		};
+		class Item188
+		{
+			dataType = "Object";
+			class PositionInfo
+			{
+				position[] = {9013.353,27.93375,12047.972};
+				angles[] = {6.2392135,3.7112489,6.21529};
+			};
+			side = "Empty";
+			class Attributes{};
+			id = 349;
+			type = "Land_OfficeCabinet_01_F";
+		};
+		class Item189
+		{
+			dataType = "Object";
+			class PositionInfo
+			{
+				position[] = {9006.507,27.57656,12046.598};
+				angles[] = {6.282272,5.7394953,6.206055};
+			};
+			side = "Empty";
+			class Attributes{};
+			id = 350;
+			type = "Land_ChairWood_F";
+		};
+		class Item190
+		{
+			dataType = "Object";
+			class PositionInfo
+			{
+				position[] = {9013.724,27.555603,12046.384};
+				angles[] = {6.2392135,0.0,6.21529};
+			};
+			side = "Empty";
+			class Attributes{};
+			id = 351;
+			type = "Land_LuggageHeap_04_F";
+		};
+		class Item191
+		{
+			dataType = "Object";
+			class PositionInfo
+			{
+				position[] = {9010.433,28.221046,12049.182};
+				angles[] = {6.2392135,2.3758745,6.21529};
+			};
+			side = "Empty";
+			class Attributes{};
+			id = 352;
+			type = "Land_Rack_F";
+		};
+		class Item192
+		{
+			dataType = "Object";
+			class PositionInfo
+			{
+				position[] = {9012.052,27.665615,12046.226};
+				angles[] = {6.2392135,0.0,6.21529};
+			};
+			side = "Empty";
+			class Attributes{};
+			id = 353;
+			type = "Land_ShelvesWooden_F";
+		};
+		class Item193
+		{
+			dataType = "Object";
+			class PositionInfo
+			{
+				position[] = {9012.151,27.638115,12045.406};
+				angles[] = {6.2392135,0.0,6.21529};
+			};
+			side = "Empty";
+			class Attributes{};
+			id = 354;
+			type = "Land_WheelieBin_01_F";
+		};
+		class Item194
+		{
+			dataType = "Object";
+			class PositionInfo
+			{
+				position[] = {9010.388,27.665304,12046.177};
+				angles[] = {0.003996757,0.0,6.220601};
+			};
+			side = "Empty";
+			class Attributes{};
+			id = 356;
+			type = "Land_LuggageHeap_04_F";
+		};
+		class Item195
+		{
+			dataType = "Object";
+			class PositionInfo
+			{
+				position[] = {9011.128,27.625105,12044.616};
+				angles[] = {6.251197,0.0,6.2206};
+			};
+			side = "Empty";
+			class Attributes{};
+			id = 357;
+			type = "Land_LuggageHeap_01_F";
+		};
+		class Item196
+		{
+			dataType = "Object";
+			class PositionInfo
+			{
+				position[] = {9014.064,27.913986,12062.235};
+				angles[] = {0.0036376154,5.5896564,6.193129};
+			};
+			side = "Empty";
+			class Attributes{};
+			id = 358;
+			type = "Land_Wreck_Truck_F";
+		};
+		class Item197
+		{
+			dataType = "Object";
+			class PositionInfo
+			{
+				position[] = {9013.311,26.687145,12060.004};
+				angles[] = {6.217945,0.0,6.187479};
+			};
+			side = "Empty";
+			class Attributes{};
+			id = 359;
+			type = "Land_JunkPile_F";
+		};
+		class Item198
+		{
+			dataType = "Object";
+			class PositionInfo
+			{
+				position[] = {9010.111,27.15868,12031.33};
+				angles[] = {6.216101,0.0,6.2676253};
+			};
+			side = "Empty";
+			class Attributes{};
+			id = 360;
+			type = "Land_GarbageBags_F";
+		};
+		class Item199
+		{
+			dataType = "Object";
+			class PositionInfo
+			{
+				position[] = {9007.799,27.00717,12030.026};
+				angles[] = {6.2338905,0.0,6.2618537};
+			};
+			side = "Empty";
+			class Attributes{};
+			id = 361;
+			type = "Land_GarbageWashingMachine_F";
+		};
+		class Item200
+		{
+			dataType = "Object";
+			class PositionInfo
+			{
+				position[] = {9007.8,26.9053,12031.928};
+				angles[] = {6.2338905,0.0,6.2618537};
+			};
+			side = "Empty";
+			class Attributes{};
+			id = 362;
+			type = "Land_GarbagePallet_F";
+		};
+		class Item201
+		{
+			dataType = "Object";
+			class PositionInfo
+			{
+				position[] = {9006.238,27.088634,12030.902};
+				angles[] = {6.233892,0.0,6.2432065};
+			};
+			side = "Empty";
+			class Attributes{};
+			id = 363;
+			type = "Land_GarbageBags_F";
+		};
+		class Item202
+		{
+			dataType = "Object";
+			class PositionInfo
+			{
+				position[] = {9009.378,27.433983,12029.625};
+				angles[] = {6.2315936,0.0,6.258564};
+			};
+			side = "Empty";
+			class Attributes{};
+			id = 364;
+			type = "Land_OfficeCabinet_01_F";
+		};
+		class Item203
+		{
+			dataType = "Object";
+			class PositionInfo
+			{
+				position[] = {9008.787,26.860355,12028.453};
+				angles[] = {6.247201,5.7203455,6.2432065};
+			};
+			side = "Empty";
+			class Attributes{};
+			id = 365;
+			type = "Land_TableDesk_F";
+		};
+		class Item204
+		{
+			dataType = "Object";
+			class PositionInfo
+			{
+				position[] = {9008.2705,27.284039,12028.104};
+				angles[] = {6.247201,0.0,6.2431808};
+			};
+			side = "Empty";
+			class Attributes{};
+			id = 366;
+			type = "Land_ChairWood_F";
+		};
+		class Item205
+		{
+			dataType = "Object";
+			class PositionInfo
+			{
+				position[] = {9012.898,27.417278,12044.0205};
+				angles[] = {6.2701063,0.0,6.220516};
+			};
+			side = "Empty";
+			class Attributes{};
+			id = 368;
+			type = "Land_JunkPile_F";
+		};
+		class Item206
+		{
+			dataType = "Object";
+			class PositionInfo
+			{
+				position[] = {9013.234,27.343414,12042.449};
+				angles[] = {6.241631,0.0,6.2298627};
+			};
+			side = "Empty";
+			class Attributes{};
+			id = 369;
+			type = "Land_Tyres_F";
+		};
+		class Item207
+		{
+			dataType = "Object";
+			class PositionInfo
+			{
+				position[] = {9012.391,28.239222,12048.402};
+				angles[] = {6.2458305,0.0,6.222136};
+			};
+			side = "Empty";
+			class Attributes{};
+			id = 378;
+			type = "Computer";
+		};
+		class Item208
+		{
+			dataType = "Object";
+			class PositionInfo
+			{
+				position[] = {9209.588,19.729765,12129.942};
+				angles[] = {0.0,3.2128763,0.0};
+			};
+			side = "Empty";
+			class Attributes{};
+			id = 446;
+			type = "HMMWVWreck";
+		};
+		class Item209
+		{
+			dataType = "Object";
+			class PositionInfo
+			{
+				position[] = {9249.384,17.06954,12113.94};
+				angles[] = {0.010664274,3.1772454,6.252529};
+			};
+			side = "Empty";
+			class Attributes{};
+			id = 447;
+			type = "Land_Wreck_Skodovka_F";
+		};
+		class Item210
+		{
+			dataType = "Object";
+			class PositionInfo
+			{
+				position[] = {9262.558,17.187092,12130.673};
+				angles[] = {6.2818484,5.571983,6.2818484};
+			};
+			side = "Empty";
+			class Attributes{};
+			id = 448;
+			type = "Land_Wreck_Car2_F";
+		};
+		class Item211
+		{
+			dataType = "Object";
+			class PositionInfo
+			{
+				position[] = {9262.552,16.774757,12128.391};
+				angles[] = {6.2818484,0.0,6.2818484};
+			};
+			side = "Empty";
+			class Attributes{};
+			id = 449;
+			type = "Land_GarbageBags_F";
+		};
+		class Item212
+		{
+			dataType = "Object";
+			class PositionInfo
+			{
+				position[] = {9260.772,16.652613,12130.043};
+				angles[] = {6.2818484,0.0,6.2631893};
+			};
+			side = "Empty";
+			class Attributes{};
+			id = 450;
+			type = "Land_JunkPile_F";
+		};
+		class Item213
+		{
+			dataType = "Object";
+			class PositionInfo
+			{
+				position[] = {9260.439,16.636168,12128.398};
+				angles[] = {6.2658563,4.117812,6.2791886};
+			};
+			side = "Empty";
+			class Attributes{};
+			id = 451;
+			type = "Land_Tyres_F";
+		};
+		class Item214
+		{
+			dataType = "Object";
+			class PositionInfo
+			{
+				position[] = {9258.345,16.452883,12128.766};
+				angles[] = {6.2658563,0.0,6.2791886};
+			};
+			side = "Empty";
+			class Attributes{};
+			id = 452;
+			type = "Land_Tyre_F";
+		};
+		class Item215
+		{
+			dataType = "Object";
+			class PositionInfo
+			{
+				position[] = {9258.849,16.441172,12128.206};
+				angles[] = {6.2658563,0.0,6.2791886};
+			};
+			side = "Empty";
+			class Attributes{};
+			id = 453;
+			type = "Land_Tyre_F";
+		};
+		class Item216
+		{
+			dataType = "Object";
+			class PositionInfo
+			{
+				position[] = {9160.194,17.000753,12013.945};
+				angles[] = {0.0,0.0,6.227244};
+			};
+			side = "Empty";
+			class Attributes{};
+			id = 454;
+			type = "Land_GarbageWashingMachine_F";
+		};
+		class Item217
+		{
+			dataType = "Object";
+			class PositionInfo
+			{
+				position[] = {9160.609,16.84889,12016.036};
+				angles[] = {6.2365537,0.0,6.227245};
+			};
+			side = "Empty";
+			class Attributes{};
+			id = 455;
+			type = "Land_JunkPile_F";
+		};
+		class Item218
+		{
+			dataType = "Object";
+			class PositionInfo
+			{
+				position[] = {9148.657,18.80705,12015.815};
+				angles[] = {0.0093350215,0.9249085,6.1677012};
+			};
+			side = "Empty";
+			class Attributes{};
+			id = 456;
+			type = "Land_Wreck_Van_F";
+		};
+		class Item219
+		{
+			dataType = "Object";
+			class PositionInfo
+			{
+				position[] = {9151.58,17.95231,12015.097};
+				angles[] = {6.2578554,0.0,6.15719};
+			};
+			side = "Empty";
+			class Attributes{};
+			id = 457;
+			type = "Land_LuggageHeap_04_F";
+		};
+		class Item220
+		{
+			dataType = "Object";
+			class PositionInfo
+			{
+				position[] = {9152.398,17.889193,12016.305};
+				angles[] = {6.2578554,0.0,6.15719};
+			};
+			side = "Empty";
+			class Attributes{};
+			id = 458;
+			type = "Land_LuggageHeap_03_F";
+		};
+		class Item221
+		{
+			dataType = "Object";
+			class PositionInfo
+			{
+				position[] = {9151.447,17.845772,12013.811};
+				angles[] = {6.2751846,0.0,6.15719};
+			};
+			side = "Empty";
+			class Attributes{};
+			id = 459;
+			type = "Land_Canister_EP1";
+		};
+		class Item222
+		{
+			dataType = "Object";
+			class PositionInfo
+			{
+				position[] = {9258.977,16.868298,12129.542};
+				angles[] = {6.2658563,0.0,6.2791886};
+			};
+			side = "Empty";
+			class Attributes{};
+			id = 460;
+			type = "Land_jbad_tires";
+		};
+		class Item223
+		{
+			dataType = "Object";
+			class PositionInfo
+			{
+				position[] = {9145.702,18.566488,12007.457};
+				angles[] = {0.0066592805,0.15271696,6.1677017};
+			};
+			side = "Empty";
+			class Attributes{};
+			id = 465;
+			type = "OfficeTable_01_old_F";
+		};
+		class Item224
+		{
+			dataType = "Object";
+			class PositionInfo
+			{
+				position[] = {9146.868,18.362617,12007.234};
+				angles[] = {0.0066592805,4.8708286,6.1677017};
+			};
+			side = "Empty";
+			class Attributes{};
+			id = 466;
+			type = "Land_TableDesk_F";
+		};
+		class Item225
+		{
+			dataType = "Object";
+			class PositionInfo
+			{
+				position[] = {9146.006,18.72531,12006.558};
+				angles[] = {0.0066592805,0.15271696,6.1677017};
+			};
+			side = "Empty";
+			class Attributes{};
+			id = 467;
+			type = "Land_OfficeChair_01_F";
+		};
+		class Item226
+		{
+			dataType = "Object";
+			class PositionInfo
+			{
+				position[] = {9145.802,19.763588,12007.477};
+				angles[] = {0.006650324,0.8449279,6.1677};
+			};
+			side = "Empty";
+			class Attributes{};
+			id = 468;
+			type = "Land_OfficeCabinet_01_F";
+		};
+		class Item227
+		{
+			dataType = "Object";
+			class PositionInfo
+			{
+				position[] = {9147.8,18.579744,12006.909};
+				angles[] = {0.0066592805,3.8639657,6.1677017};
+			};
+			side = "Empty";
+			class Attributes{};
+			id = 469;
+			type = "Land_OfficeCabinet_01_F";
+		};
+		class Item228
+		{
+			dataType = "Object";
+			class PositionInfo
+			{
+				position[] = {9146.953,18.764267,12007.187};
+				angles[] = {0.006650324,0.15271696,6.1677};
+			};
+			side = "Empty";
+			class Attributes{};
+			id = 470;
+			type = "Land_ChairWood_F";
+		};
+		class Item229
+		{
+			dataType = "Object";
+			class PositionInfo
+			{
+				position[] = {9147.926,18.205353,12005.28};
+				angles[] = {0.0066592805,0.15271696,6.1677017};
+			};
+			side = "Empty";
+			class Attributes{};
+			id = 471;
+			type = "Land_LuggageHeap_04_F";
+		};
+		class Item230
+		{
+			dataType = "Object";
+			class PositionInfo
+			{
+				position[] = {9145.1,19.139986,12008.549};
+				angles[] = {0.0,2.5285914,0.0};
+			};
+			side = "Empty";
+			class Attributes{};
+			id = 472;
+			type = "Land_Rack_F";
+		};
+		class Item231
+		{
+			dataType = "Object";
+			class PositionInfo
+			{
+				position[] = {9146.249,18.45118,12005.38};
+				angles[] = {0.0066592805,0.15271696,6.1677017};
+			};
+			side = "Empty";
+			class Attributes{};
+			id = 473;
+			type = "Land_ShelvesWooden_F";
+		};
+		class Item232
+		{
+			dataType = "Object";
+			class PositionInfo
+			{
+				position[] = {9146.223,18.425993,12004.556};
+				angles[] = {0.0066592805,0.15271696,6.1677017};
+			};
+			side = "Empty";
+			class Attributes{};
+			id = 474;
+			type = "Land_WheelieBin_01_F";
+		};
+		class Item233
+		{
+			dataType = "Object";
+			class PositionInfo
+			{
+				position[] = {9266.945,17.068817,12120.498};
+				angles[] = {0.0,0.33738407,6.2818937};
+			};
+			side = "Empty";
+			class Attributes{};
+			id = 475;
+			type = "Land_jbad_crates";
+		};
+		class Item234
+		{
+			dataType = "Object";
+			class PositionInfo
+			{
+				position[] = {9278.237,16.889736,12136.613};
+			};
+			side = "Empty";
+			class Attributes{};
+			id = 477;
+			type = "OfficeTable_01_old_F";
+		};
+		class Item235
+		{
+			dataType = "Object";
+			class PositionInfo
+			{
+				position[] = {9279.424,16.776245,12136.57};
+				angles[] = {0.0,4.7181115,0.0};
+			};
+			side = "Empty";
+			class Attributes{};
+			id = 478;
+			type = "Land_TableDesk_F";
+		};
+		class Item236
+		{
+			dataType = "Object";
+			class PositionInfo
+			{
+				position[] = {9278.675,17.135628,12135.77};
+			};
+			side = "Empty";
+			class Attributes{};
+			id = 479;
+			type = "Land_OfficeChair_01_F";
+		};
+		class Item237
+		{
+			dataType = "Object";
+			class PositionInfo
+			{
+				position[] = {9278.328,18.088848,12136.641};
+				angles[] = {0.0,0.6922109,0.0};
+			};
+			side = "Empty";
+			class Attributes{};
+			id = 480;
+			type = "Land_OfficeCabinet_01_F";
+		};
+		class Item238
+		{
+			dataType = "Object";
+			class PositionInfo
+			{
+				position[] = {9280.395,17.107897,12136.39};
+				angles[] = {0.0,3.7112489,0.0};
+			};
+			side = "Empty";
+			class Attributes{};
+			id = 481;
+			type = "Land_OfficeCabinet_01_F";
+		};
+		class Item239
+		{
+			dataType = "Object";
+			class PositionInfo
+			{
+				position[] = {9280.766,16.830011,12134.802};
+			};
+			side = "Empty";
+			class Attributes{};
+			id = 483;
+			type = "Land_LuggageHeap_04_F";
+		};
+		class Item240
+		{
+			dataType = "Object";
+			class PositionInfo
+			{
+				position[] = {9277.475,17.309185,12137.6};
+				angles[] = {0.0,2.3758745,6.2778587};
+			};
+			side = "Empty";
+			class Attributes{};
+			id = 484;
+			type = "Land_Rack_F";
+		};
+		class Item241
+		{
+			dataType = "Object";
+			class PositionInfo
+			{
+				position[] = {9279.094,16.970314,12134.644};
+			};
+			side = "Empty";
+			class Attributes{};
+			id = 485;
+			type = "Land_ShelvesWooden_F";
+		};
+		class Item242
+		{
+			dataType = "Object";
+			class PositionInfo
+			{
+				position[] = {9279.193,17.00779,12133.824};
+			};
+			side = "Empty";
+			class Attributes{};
+			id = 486;
+			type = "Land_WheelieBin_01_F";
+		};
+		class Item243
+		{
+			dataType = "Object";
+			class PositionInfo
+			{
+				position[] = {9277.43,17.00405,12134.595};
+			};
+			side = "Empty";
+			class Attributes{};
+			id = 487;
+			type = "Land_LuggageHeap_04_F";
+		};
+		class Item244
+		{
+			dataType = "Object";
+			class PositionInfo
+			{
+				position[] = {9278.17,17.078976,12133.034};
+			};
+			side = "Empty";
+			class Attributes{};
+			id = 488;
+			type = "Land_LuggageHeap_01_F";
+		};
+		class Item245
+		{
+			dataType = "Object";
+			class PositionInfo
+			{
+				position[] = {9257.006,17.618849,12114.67};
+				angles[] = {6.2778587,5.5896564,0.0013372133};
+			};
+			side = "Empty";
+			class Attributes{};
+			id = 489;
+			type = "Land_Wreck_Truck_F";
+		};
+		class Item246
+		{
+			dataType = "Object";
+			class PositionInfo
+			{
+				position[] = {9256.252,16.604803,12112.438};
+				angles[] = {6.257858,0.0,0.0013372133};
+			};
+			side = "Empty";
+			class Attributes{};
+			id = 490;
+			type = "Land_JunkPile_F";
+		};
+		class Item247
+		{
+			dataType = "Object";
+			class PositionInfo
+			{
+				position[] = {9159.395,17.153864,12008.733};
+				angles[] = {6.2751846,0.0,6.2352223};
+			};
+			side = "Empty";
+			class Attributes{};
+			id = 491;
+			type = "Land_GarbageBags_F";
+		};
+		class Item248
+		{
+			dataType = "Object";
+			class PositionInfo
+			{
+				position[] = {9157.082,17.137745,12007.43};
+				angles[] = {0.014664836,0.0,6.1756024};
+			};
+			side = "Empty";
+			class Attributes{};
+			id = 492;
+			type = "Land_GarbageWashingMachine_F";
+		};
+		class Item249
+		{
+			dataType = "Object";
+			class PositionInfo
+			{
+				position[] = {9157.083,16.963736,12009.331};
+				angles[] = {6.2751846,0.0,6.15719};
+			};
+			side = "Empty";
+			class Attributes{};
+			id = 493;
+			type = "Land_GarbagePallet_F";
+		};
+		class Item250
+		{
+			dataType = "Object";
+			class PositionInfo
+			{
+				position[] = {9155.521,17.308819,12008.306};
+				angles[] = {6.256525,0.0,6.1756024};
+			};
+			side = "Empty";
+			class Attributes{};
+			id = 494;
+			type = "Land_GarbageBags_F";
+		};
+		class Item251
+		{
+			dataType = "Object";
+			class PositionInfo
+			{
+				position[] = {9158.661,17.52354,12007.028};
+				angles[] = {5.64536,0.0,0.050508853};
+			};
+			side = "Empty";
+			class Attributes{};
+			id = 495;
+			type = "Land_OfficeCabinet_01_F";
+		};
+		class Item252
+		{
+			dataType = "Object";
+			class PositionInfo
+			{
+				position[] = {9158.07,17.062365,12005.856};
+				angles[] = {0.014664836,5.7203455,6.2086577};
+			};
+			side = "Empty";
+			class Attributes{};
+			id = 496;
+			type = "Land_TableDesk_F";
+		};
+		class Item253
+		{
+			dataType = "Object";
+			class PositionInfo
+			{
+				position[] = {9157.554,17.527454,12005.507};
+				angles[] = {0.014664836,0.0,6.2086496};
+			};
+			side = "Empty";
+			class Attributes{};
+			id = 497;
+			type = "Land_ChairWood_F";
+		};
+		class Item254
+		{
+			dataType = "Object";
+			class PositionInfo
+			{
+				position[] = {9279.94,16.891659,12132.438};
+			};
+			side = "Empty";
+			class Attributes{};
+			id = 498;
+			type = "Land_JunkPile_F";
+		};
+		class Item255
+		{
+			dataType = "Object";
+			class PositionInfo
+			{
+				position[] = {9280.276,16.942436,12130.867};
+			};
+			side = "Empty";
+			class Attributes{};
+			id = 499;
+			type = "Land_Tyres_F";
+		};
+		class Item256
+		{
+			dataType = "Object";
+			class PositionInfo
+			{
+				position[] = {9279.441,17.372372,12136.429};
+			};
+			side = "Empty";
+			class Attributes{};
+			id = 500;
+			type = "Computer";
+		};
+		class Item257
+		{
+			dataType = "Object";
+			class PositionInfo
+			{
+				position[] = {8864.431,28.253302,12016.003};
+				angles[] = {6.186158,5.726926,6.2126365};
+			};
+			side = "Empty";
+			class Attributes{};
+			id = 504;
+			type = "OfficeTable_01_old_F";
+		};
+		class Item258
+		{
+			dataType = "Object";
+			class PositionInfo
+			{
+				position[] = {8865.462,28.269032,12016.593};
+				angles[] = {6.186158,4.161852,0.031988446};
+			};
+			side = "Empty";
+			class Attributes{};
+			id = 505;
+			type = "Land_TableDesk_F";
+		};
+		class Item259
+		{
+			dataType = "Object";
+			class PositionInfo
+			{
+				position[] = {8865.233,28.426022,12015.519};
+				angles[] = {6.186158,5.726926,0.031988446};
+			};
+			side = "Empty";
+			class Attributes{};
+			id = 506;
+			type = "Land_OfficeChair_01_F";
+		};
+		class Item260
+		{
+			dataType = "Object";
+			class PositionInfo
+			{
+				position[] = {8864.507,29.573483,12016.041};
+				angles[] = {0.0,0.13595134,0.0};
+			};
+			side = "Empty";
+			class Attributes{};
+			id = 507;
+			type = "Land_OfficeCabinet_01_F";
+		};
+		class Item261
+		{
+			dataType = "Object";
+			class PositionInfo
+			{
+				position[] = {8866.36,28.708231,12016.953};
+				angles[] = {6.186158,3.1549892,0.031988446};
+			};
+			side = "Empty";
+			class Attributes{};
+			id = 508;
+			type = "Land_OfficeCabinet_01_F";
+		};
+		class Item262
+		{
+			dataType = "Object";
+			class PositionInfo
+			{
+				position[] = {8867.558,28.349663,12015.799};
+				angles[] = {6.186158,5.726926,0.031988446};
+			};
+			side = "Empty";
+			class Attributes{};
+			id = 509;
+			type = "Land_LuggageHeap_04_F";
+		};
+		class Item263
+		{
+			dataType = "Object";
+			class PositionInfo
+			{
+				position[] = {8863.24,28.768248,12016.439};
+				angles[] = {6.1571894,1.8196149,6.2418756};
+			};
+			side = "Empty";
+			class Attributes{};
+			id = 510;
+			type = "Land_Rack_F";
+		};
+		class Item264
+		{
+			dataType = "Object";
+			class PositionInfo
+			{
+				position[] = {8866.193,28.224634,12014.782};
+				angles[] = {6.256525,5.726926,0.031988446};
+			};
+			side = "Empty";
+			class Attributes{};
+			id = 511;
+			type = "Land_ShelvesWooden_F";
+		};
+		class Item265
+		{
+			dataType = "Object";
+			class PositionInfo
+			{
+				position[] = {8866.71,28.239185,12014.14};
+				angles[] = {6.256525,5.726926,0.031988446};
+			};
+			side = "Empty";
+			class Attributes{};
+			id = 512;
+			type = "Land_WheelieBin_01_F";
+		};
+		class Item266
+		{
+			dataType = "Object";
+			class PositionInfo
+			{
+				position[] = {8864.834,28.215069,12013.861};
+				angles[] = {0.01599837,5.726926,6.2418756};
+			};
+			side = "Empty";
+			class Attributes{};
+			id = 513;
+			type = "Land_LuggageHeap_04_F";
+		};
+		class Item267
+		{
+			dataType = "Object";
+			class PositionInfo
+			{
+				position[] = {8866.287,28.252699,12012.928};
+				angles[] = {0.01599837,5.726926,6.272521};
+			};
+			side = "Empty";
+			class Attributes{};
+			id = 514;
+			type = "Land_LuggageHeap_01_F";
+		};
+		class Item268
+		{
+			dataType = "Object";
+			class PositionInfo
+			{
+				position[] = {8868.1045,28.040184,12013.356};
+				angles[] = {6.256525,5.726926,0.031988446};
+			};
+			side = "Empty";
+			class Attributes{};
+			id = 515;
+			type = "Land_JunkPile_F";
+		};
+		class Item269
+		{
+			dataType = "Object";
+			class PositionInfo
+			{
+				position[] = {8869.22,28.02272,12012.199};
+				angles[] = {6.256525,5.726926,0.031988446};
+			};
+			side = "Empty";
+			class Attributes{};
+			id = 516;
+			type = "Land_Tyres_F";
+		};
+		class Item270
+		{
+			dataType = "Object";
+			class PositionInfo
+			{
+				position[] = {8865.572,28.869204,12016.474};
+				angles[] = {6.186158,5.726926,0.0321409};
+			};
+			side = "Empty";
+			class Attributes{};
+			id = 517;
+			type = "Computer";
+		};
+		class Item271
+		{
+			dataType = "Object";
+			class PositionInfo
+			{
+				position[] = {8871.131,29.509344,12026.007};
+				angles[] = {6.1571894,1.4558393,0.051953323};
+			};
+			side = "Empty";
+			class Attributes{};
+			id = 518;
+			type = "OfficeTable_01_old_F";
+		};
+		class Item272
+		{
+			dataType = "Object";
+			class PositionInfo
+			{
+				position[] = {8871.224,29.349028,12024.826};
+				angles[] = {6.1571894,6.1739507,0.051953323};
+			};
+			side = "Empty";
+			class Attributes{};
+			id = 519;
+			type = "Land_TableDesk_F";
+		};
+		class Item273
+		{
+			dataType = "Object";
+			class PositionInfo
+			{
+				position[] = {8870.359,29.652025,12025.443};
+				angles[] = {6.1571894,1.4558393,0.051953323};
+			};
+			side = "Empty";
+			class Attributes{};
+			id = 520;
+			type = "Land_OfficeChair_01_F";
+		};
+		class Item274
+		{
+			dataType = "Object";
+			class PositionInfo
+			{
+				position[] = {8871.047,30.68953,12025.839};
+				angles[] = {6.15719,2.1480503,0.052367177};
+			};
+			side = "Empty";
+			class Attributes{};
+			id = 521;
+			type = "Land_OfficeCabinet_01_F";
+		};
+		class Item275
+		{
+			dataType = "Object";
+			class PositionInfo
+			{
+				position[] = {8871.182,29.592634,12023.791};
+				angles[] = {6.1571894,5.167088,0.051953323};
+			};
+			side = "Empty";
+			class Attributes{};
+			id = 522;
+			type = "Land_OfficeCabinet_01_F";
+		};
+		class Item276
+		{
+			dataType = "Object";
+			class PositionInfo
+			{
+				position[] = {8869.592,29.193142,12023.343};
+				angles[] = {6.170334,1.4558393,0.038647637};
+			};
+			side = "Empty";
+			class Attributes{};
+			id = 523;
+			type = "Land_LuggageHeap_04_F";
+		};
+		class Item277
+		{
+			dataType = "Object";
+			class PositionInfo
+			{
+				position[] = {8872.051,30.058168,12026.828};
+				angles[] = {6.1571894,3.8317137,0.051953323};
+			};
+			side = "Empty";
+			class Attributes{};
+			id = 524;
+			type = "Land_Rack_F";
+		};
+		class Item278
+		{
+			dataType = "Object";
+			class PositionInfo
+			{
+				position[] = {8869.277,29.36505,12024.92};
+				angles[] = {6.170334,1.4558393,0.038647637};
+			};
+			side = "Empty";
+			class Attributes{};
+			id = 525;
+			type = "Land_ShelvesWooden_F";
+		};
+		class Item279
+		{
+			dataType = "Object";
+			class PositionInfo
+			{
+				position[] = {8868.478,29.327274,12024.725};
+				angles[] = {6.170334,1.4558393,0.038647637};
+			};
+			side = "Empty";
+			class Attributes{};
+			id = 526;
+			type = "Land_WheelieBin_01_F";
+		};
+		class Item280
+		{
+			dataType = "Object";
+			class PositionInfo
+			{
+				position[] = {8869.004,29.551836,12026.633};
+				angles[] = {6.1571894,1.4558393,0.051953323};
+			};
+			side = "Empty";
+			class Attributes{};
+			id = 527;
+			type = "Land_LuggageHeap_04_F";
+		};
+		class Item281
+		{
+			dataType = "Object";
+			class PositionInfo
+			{
+				position[] = {8867.538,29.476301,12025.718};
+				angles[] = {6.170334,1.4558393,0.038647637};
+			};
+			side = "Empty";
+			class Attributes{};
+			id = 528;
+			type = "Land_LuggageHeap_01_F";
+		};
+		class Item282
+		{
+			dataType = "Object";
+			class PositionInfo
+			{
+				position[] = {8871.076,29.723316,12024.851};
+				angles[] = {0.0,1.4558393,0.0};
+			};
+			side = "Empty";
+			class Attributes{};
+			id = 531;
+			type = "Computer";
+		};
+		class Item283
+		{
+			dataType = "Object";
+			class PositionInfo
+			{
+				position[] = {8863.089,29.270197,12021.819};
+				angles[] = {6.186158,0.9260194,6.2126365};
+			};
+			side = "Empty";
+			class Attributes{};
+			id = 532;
+			type = "Land_OfficeCabinet_01_F";
+		};
+		class Item284
+		{
+			dataType = "Object";
+			class PositionInfo
+			{
+				position[] = {8862.659,29.243597,12021.234};
+				angles[] = {6.186158,2.1480503,6.2126365};
+			};
+			side = "Empty";
+			class Attributes{};
+			id = 533;
+			type = "Land_OfficeCabinet_01_F";
+		};
+		class Item285
+		{
+			dataType = "Object";
+			class PositionInfo
+			{
+				position[] = {8863.119,29.0513,12020.642};
+				angles[] = {6.186158,5.572754,6.2126365};
+			};
+			side = "Empty";
+			class Attributes{};
+			id = 534;
+			type = "Land_OfficeChair_01_F";
+		};
+		class Item286
+		{
+			dataType = "Object";
+			class PositionInfo
+			{
+				position[] = {8854.256,31.621367,12028.268};
+				angles[] = {0.0,2.952901,0.0};
+			};
+			side = "Empty";
+			flags = 1;
+			class Attributes{};
+			id = 537;
+			type = "Land_Grave_monument_F";
+		};
+		class Item287
+		{
+			dataType = "Object";
+			class PositionInfo
+			{
+				position[] = {8849.995,31.127485,12010.396};
+				angles[] = {0.0,3.1290226,0.0};
+			};
+			side = "Empty";
+			flags = 1;
+			class Attributes{};
+			id = 543;
+			type = "Land_Grave_obelisk_F";
+		};
+		class Item288
+		{
+			dataType = "Object";
+			class PositionInfo
+			{
+				position[] = {9001.338,70.8851,12198.253};
+				angles[] = {0.06524053,1.4585795,6.2245865};
+			};
+			side = "Empty";
+			class Attributes
+			{
+				skill = 0.6;
+			};
+			id = 545;
+			type = "TB_Land_Cargo_Tower_V2_F";
+		};
+		class Item289
+		{
+			dataType = "Object";
+			class PositionInfo
+			{
+				position[] = {9243.283,36.040268,12654.364};
+			};
+			side = "Empty";
+			flags = 1;
+			class Attributes{};
+			id = 551;
+			type = "Land_Crane_F";
+		};
+		class Item290
+		{
+			dataType = "Object";
+			class PositionInfo
+			{
+				position[] = {9292.115,25.217375,12634.304};
+				angles[] = {0.0,3.7304718,0.0};
+			};
+			side = "Empty";
+			flags = 1;
+			class Attributes{};
+			id = 564;
+			type = "Land_cmp_Tower_F";
+		};
+		class Item291
+		{
+			dataType = "Object";
+			class PositionInfo
+			{
+				position[] = {9193.493,112.19048,11449.254};
+				angles[] = {0.0,1.3797948,0.0};
+			};
+			side = "Empty";
+			flags = 1;
+			class Attributes{};
+			id = 567;
+			type = "Land_u_Barracks_V2_F";
+		};
+		class Item292
+		{
+			dataType = "Object";
+			class PositionInfo
+			{
+				position[] = {8888.581,35.922596,12118.033};
+				angles[] = {6.257858,4.272805,0.033321146};
+			};
+			side = "Empty";
+			class Attributes{};
+			id = 568;
+			type = "Fort_Barricade";
+		};
+		class Item293
+		{
+			dataType = "Object";
+			class PositionInfo
+			{
+				position[] = {8893.341,35.873898,12114.571};
+				angles[] = {6.267187,0.0,0.02399601};
+			};
+			side = "Empty";
+			class Attributes{};
+			id = 575;
+			type = "Hedgehog";
+		};
+		class Item294
+		{
+			dataType = "Object";
+			class PositionInfo
+			{
+				position[] = {8892.477,35.89112,12116.944};
+				angles[] = {6.267187,0.0,0.02399601};
+			};
+			side = "Empty";
+			class Attributes{};
+			id = 576;
+			type = "Hedgehog";
+		};
+		class Item295
+		{
+			dataType = "Object";
+			class PositionInfo
+			{
+				position[] = {8891.564,35.90876,12119.436};
+				angles[] = {6.257858,0.0,0.033321146};
+			};
+			side = "Empty";
+			class Attributes{};
+			id = 577;
+			type = "Hedgehog";
+		};
+		class Item296
+		{
+			dataType = "Object";
+			class PositionInfo
+			{
+				position[] = {8892.181,36.07023,12107.103};
+				angles[] = {6.256525,4.0021086,0.035984326};
+			};
+			side = "Empty";
+			class Attributes{};
+			id = 599;
+			type = "Land_BagBunker_Small_F";
+		};
+		class Item297
+		{
+			dataType = "Object";
+			class PositionInfo
+			{
+				position[] = {9039.751,23.231836,11950.659};
+				angles[] = {0.021328852,3.4170015,6.178239};
+			};
+			side = "Empty";
+			class Attributes{};
+			id = 600;
+			type = "Fort_Barricade";
+		};
+		class Item298
+		{
+			dataType = "Object";
+			class PositionInfo
+			{
+				position[] = {9043.985,23.148748,11952.316};
+				angles[] = {0.0,5.4273815,0.0};
+			};
+			side = "Empty";
+			class Attributes{};
+			id = 601;
+			type = "Hedgehog";
+		};
+		class Item299
+		{
+			dataType = "Object";
+			class PositionInfo
+			{
+				position[] = {9040.695,23.394823,11953.592};
+				angles[] = {0.0,5.4273815,0.0};
+			};
+			side = "Empty";
+			class Attributes{};
+			id = 602;
+			type = "Hedgehog";
+		};
+		class Item300
+		{
+			dataType = "Object";
+			class PositionInfo
+			{
+				position[] = {9037.7,23.585512,11954.554};
+				angles[] = {0.0,5.4273815,0.0};
+			};
+			side = "Empty";
+			class Attributes{};
+			id = 603;
+			type = "Hedgehog";
+		};
+		class Item301
+		{
+			dataType = "Object";
+			class PositionInfo
+			{
+				position[] = {9048.872,22.639744,11946.043};
+				angles[] = {0.022662206,3.1463048,6.170334};
+			};
+			side = "Empty";
+			class Attributes{};
+			id = 604;
+			type = "Land_BagBunker_Small_F";
+		};
+		class Item302
+		{
+			dataType = "Object";
+			class PositionInfo
+			{
+				position[] = {9182.164,17.258144,11915.181};
+				angles[] = {0.013332055,4.272805,6.2645216};
+			};
+			side = "Empty";
+			class Attributes{};
+			id = 605;
+			type = "Fort_Barricade";
+		};
+		class Item303
+		{
+			dataType = "Object";
+			class PositionInfo
+			{
+				position[] = {9186.924,17.229763,11911.719};
+				angles[] = {0.0066682254,0.0,6.27119};
+			};
+			side = "Empty";
+			class Attributes{};
+			id = 606;
+			type = "Hedgehog";
+		};
+		class Item304
+		{
+			dataType = "Object";
+			class PositionInfo
+			{
+				position[] = {9186.06,17.229153,11914.092};
+				angles[] = {0.0066682254,0.0,6.27119};
+			};
+			side = "Empty";
+			class Attributes{};
+			id = 607;
+			type = "Hedgehog";
+		};
+		class Item305
+		{
+			dataType = "Object";
+			class PositionInfo
+			{
+				position[] = {9185.147,17.236807,11916.583};
+			};
+			side = "Empty";
+			class Attributes{};
+			id = 608;
+			type = "Hedgehog";
+		};
+		class Item306
+		{
+			dataType = "Object";
+			class PositionInfo
+			{
+				position[] = {9185.964,17.534147,11903.738};
+				angles[] = {0.00799353,4.0021086,6.27119};
+			};
+			side = "Empty";
+			class Attributes{};
+			id = 609;
+			type = "Land_BagBunker_Small_F";
+		};
+		class Item307
+		{
+			dataType = "Object";
+			class PositionInfo
+			{
+				position[] = {9279.777,17.269228,12170.441};
+				angles[] = {0.014664836,0.6959609,6.2711854};
+			};
+			side = "Empty";
+			class Attributes{};
+			id = 610;
+			type = "Fort_Barricade";
+		};
+		class Item308
+		{
+			dataType = "Object";
+			class PositionInfo
+			{
+				position[] = {9274.001,17.263758,12171.573};
+				angles[] = {6.2818484,2.7063413,6.2738566};
+			};
+			side = "Empty";
+			class Attributes{};
+			id = 611;
+			type = "Hedgehog";
+		};
+		class Item309
+		{
+			dataType = "Object";
+			class PositionInfo
+			{
+				position[] = {9275.786,17.271702,12169.786};
+				angles[] = {6.2818484,2.7063413,6.2738566};
+			};
+			side = "Empty";
+			class Attributes{};
+			id = 612;
+			type = "Hedgehog";
+		};
+		class Item310
+		{
+			dataType = "Object";
+			class PositionInfo
+			{
+				position[] = {9277.663,17.281702,12167.912};
+				angles[] = {6.2818484,2.7063413,0.003996757};
+			};
+			side = "Empty";
+			class Attributes{};
+			id = 613;
+			type = "Hedgehog";
+		};
+		class Item311
+		{
+			dataType = "Object";
+			class PositionInfo
+			{
+				position[] = {9277.894,17.45802,12184.176};
+				angles[] = {0.008000983,0.42526424,6.272521};
+			};
+			side = "Empty";
+			class Attributes{};
+			id = 614;
+			type = "Land_BagBunker_Small_F";
+		};
+		class Item312
+		{
+			dataType = "Object";
+			class PositionInfo
+			{
+				position[] = {8936.361,68.62622,11872.42};
+				angles[] = {0.042641956,5.9242826,0.1286198};
+			};
+			side = "Empty";
+			class Attributes{};
+			id = 615;
+			type = "Hhedgehog_concreteBig";
+		};
+		class Item313
+		{
+			dataType = "Object";
+			class PositionInfo
+			{
+				position[] = {8944.87,68.85653,11872.45};
+				angles[] = {0.06922241,0.4098683,6.233892};
+			};
+			side = "Empty";
+			class Attributes{};
+			id = 616;
+			type = "Hhedgehog_concreteBig";
+		};
+		class Item314
+		{
+			dataType = "Object";
+			class PositionInfo
+			{
+				position[] = {9339.463,48.32999,12733.806};
+				angles[] = {0.0,2.0761266,0.0};
+			};
+			side = "Empty";
+			flags = 1;
+			class Attributes{};
+			id = 619;
+			type = "Land_i_Windmill01_F";
+		};
+		class Item315
+		{
+			dataType = "Object";
+			class PositionInfo
+			{
+				position[] = {9268.288,17.423655,12623.533};
+				angles[] = {6.2791886,0.0,6.2765174};
+			};
+			side = "Empty";
+			class Attributes{};
+			id = 638;
+			type = "Land_Wreck_HMMWV_F";
+		};
+		class Item316
+		{
+			dataType = "Object";
+			class PositionInfo
+			{
+				position[] = {9267.84,17.57941,12632.715};
+				angles[] = {6.2751846,0.0,6.2818484};
+			};
+			side = "Empty";
+			class Attributes{};
+			id = 640;
+			type = "Land_Wreck_Offroad_F";
+		};
+		class Item317
+		{
+			dataType = "Object";
+			class PositionInfo
+			{
+				position[] = {9269.116,17.461086,12628.729};
+				angles[] = {6.2765174,0.0,6.2791886};
+			};
+			side = "Empty";
+			class Attributes{};
+			id = 641;
+			type = "Land_Wreck_UAZ_F";
+		};
+		class Item318
+		{
+			dataType = "Object";
+			class PositionInfo
+			{
+				position[] = {9265.041,17.608398,12621.591};
+				angles[] = {6.2791886,4.4235907,6.2765174};
+			};
+			side = "Empty";
+			class Attributes{};
+			id = 643;
+			type = "Land_Wreck_Van_F";
+		};
+		class Item319
+		{
+			dataType = "Object";
+			class PositionInfo
+			{
+				position[] = {9266.548,17.796074,12628.252};
+				angles[] = {6.2765174,2.7298968,6.2791886};
+			};
+			side = "Empty";
+			class Attributes{};
+			id = 644;
+			type = "Land_Wreck_Truck_dropside_F";
+		};
+		class Item320
+		{
+			dataType = "Object";
+			class PositionInfo
+			{
+				position[] = {9268.478,16.842993,12620.125};
+				angles[] = {6.2791886,0.0,6.2765174};
+			};
+			side = "Empty";
+			class Attributes{};
+			id = 645;
+			type = "Land_Tyres_F";
+		};
+		class Item321
+		{
+			dataType = "Object";
+			class PositionInfo
+			{
+				position[] = {9270.19,17.005222,12618.523};
+				angles[] = {6.2791886,0.0,6.2805333};
+			};
+			side = "Empty";
+			class Attributes{};
+			id = 646;
+			type = "Land_GarbageWashingMachine_F";
+		};
+		class Item322
+		{
+			dataType = "Object";
+			class PositionInfo
+			{
+				position[] = {9270.268,17.172468,12619.831};
+				angles[] = {6.2791886,0.0,6.2805333};
+			};
+			side = "Empty";
+			class Attributes{};
+			id = 647;
+			type = "Land_GarbageBarrel_01_F";
+		};
+		class Item323
+		{
+			dataType = "Object";
+			class PositionInfo
+			{
+				position[] = {9273.461,16.984632,12620.058};
+				angles[] = {6.2791886,0.0,6.2805333};
+			};
+			side = "Empty";
+			class Attributes{};
+			id = 648;
+			type = "Land_GarbageBags_F";
+		};
+		class Item324
+		{
+			dataType = "Object";
+			class PositionInfo
+			{
+				position[] = {9272.883,16.9798,12618.458};
+				angles[] = {6.2791886,0.0,6.2805333};
+			};
+			side = "Empty";
+			class Attributes{};
+			id = 649;
+			type = "Land_GarbageBags_F";
+		};
+		class Item325
+		{
+			dataType = "Object";
+			class PositionInfo
+			{
+				position[] = {9283.124,18.386364,12622.668};
+				angles[] = {0.0,2.1310408,0.0};
+			};
+			side = "Empty";
+			flags = 1;
+			class Attributes{};
+			id = 652;
+			type = "Land_i_Stone_HouseBig_V3_F";
+		};
+		class Item326
+		{
+			dataType = "Object";
+			class PositionInfo
+			{
+				position[] = {9066.893,22.649244,12021.545};
+				angles[] = {0.0,0.15271696,0.0};
+			};
+			side = "Empty";
+			class Attributes{};
+			id = 655;
+			type = "OfficeTable_01_old_F";
+		};
+		class Item327
+		{
+			dataType = "Object";
+			class PositionInfo
+			{
+				position[] = {9068.059,22.41641,12021.322};
+				angles[] = {0.0,4.8708286,0.0};
+			};
+			side = "Empty";
+			class Attributes{};
+			id = 656;
+			type = "Land_TableDesk_F";
+		};
+		class Item328
+		{
+			dataType = "Object";
+			class PositionInfo
+			{
+				position[] = {9067.196,22.81459,12020.6455};
+				angles[] = {0.0,0.15271696,0.0};
+			};
+			side = "Empty";
+			class Attributes{};
+			id = 657;
+			type = "Land_OfficeChair_01_F";
+		};
+		class Item329
+		{
+			dataType = "Object";
+			class PositionInfo
+			{
+				position[] = {9066.992,23.845808,12021.564};
+				angles[] = {0.0,0.8449279,0.0};
+			};
+			side = "Empty";
+			class Attributes{};
+			id = 658;
+			type = "Land_OfficeCabinet_01_F";
+		};
+		class Item330
+		{
+			dataType = "Object";
+			class PositionInfo
+			{
+				position[] = {9068.99,22.595615,12020.997};
+				angles[] = {0.033321146,3.8639657,6.199383};
+			};
+			side = "Empty";
+			class Attributes{};
+			id = 659;
+			type = "Land_OfficeCabinet_01_F";
+		};
+		class Item331
+		{
+			dataType = "Object";
+			class PositionInfo
+			{
+				position[] = {9068.144,22.813732,12021.274};
+				angles[] = {0.0,0.15271696,0.0};
+			};
+			side = "Empty";
+			class Attributes{};
+			id = 660;
+			type = "Land_ChairWood_F";
+		};
+		class Item332
+		{
+			dataType = "Object";
+			class PositionInfo
+			{
+				position[] = {9069.116,22.265963,12019.368};
+				angles[] = {0.025898049,0.15271696,6.209119};
+			};
+			side = "Empty";
+			class Attributes{};
+			id = 661;
+			type = "Land_LuggageHeap_04_F";
+		};
+		class Item333
+		{
+			dataType = "Object";
+			class PositionInfo
+			{
+				position[] = {9066.29,23.219812,12022.637};
+				angles[] = {0.0,2.5285914,0.0};
+			};
+			side = "Empty";
+			class Attributes{};
+			id = 662;
+			type = "Land_Rack_F";
+		};
+		class Item334
+		{
+			dataType = "Object";
+			class PositionInfo
+			{
+				position[] = {9067.439,22.57698,12019.468};
+				angles[] = {0.0,0.15271696,0.0};
+			};
+			side = "Empty";
+			class Attributes{};
+			id = 663;
+			type = "Land_ShelvesWooden_F";
+		};
+		class Item335
+		{
+			dataType = "Object";
+			class PositionInfo
+			{
+				position[] = {9067.413,22.613567,12018.644};
+				angles[] = {0.04219074,0.15271696,6.232521};
+			};
+			side = "Empty";
+			class Attributes{};
+			id = 664;
+			type = "Land_WheelieBin_01_F";
+		};
+		class Item336
+		{
+			dataType = "Object";
+			class PositionInfo
+			{
+				position[] = {8925.703,31.966476,12059.959};
+				angles[] = {6.202031,0.15271696,6.249864};
+			};
+			side = "Empty";
+			class Attributes{};
+			id = 665;
+			type = "OfficeTable_01_old_F";
+		};
+		class Item337
+		{
+			dataType = "Object";
+			class PositionInfo
+			{
+				position[] = {8926.869,31.756914,12059.736};
+				angles[] = {6.202031,4.8708286,6.249864};
+			};
+			side = "Empty";
+			class Attributes{};
+			id = 666;
+			type = "Land_TableDesk_F";
+		};
+		class Item338
+		{
+			dataType = "Object";
+			class PositionInfo
+			{
+				position[] = {8926.007,32.123642,12059.06};
+				angles[] = {6.202031,0.15271696,6.249864};
+			};
+			side = "Empty";
+			class Attributes{};
+			id = 667;
+			type = "Land_OfficeChair_01_F";
+		};
+		class Item339
+		{
+			dataType = "Object";
+			class PositionInfo
+			{
+				position[] = {8925.803,33.163506,12059.979};
+				angles[] = {6.202031,0.8449279,6.2497535};
+			};
+			side = "Empty";
+			class Attributes{};
+			id = 668;
+			type = "Land_OfficeCabinet_01_F";
+		};
+		class Item340
+		{
+			dataType = "Object";
+			class PositionInfo
+			{
+				position[] = {8927.801,32.02234,12059.411};
+				angles[] = {6.202031,3.8639657,6.249864};
+			};
+			side = "Empty";
+			class Attributes{};
+			id = 669;
+			type = "Land_OfficeCabinet_01_F";
+		};
+		class Item341
+		{
+			dataType = "Object";
+			class PositionInfo
+			{
+				position[] = {8926.954,32.15856,12059.688};
+				angles[] = {6.209611,0.15271696,6.2555933};
+			};
+			side = "Empty";
+			class Attributes{};
+			id = 670;
+			type = "Land_ChairWood_F";
+		};
+		class Item342
+		{
+			dataType = "Object";
+			class PositionInfo
+			{
+				position[] = {8927.927,31.602097,12057.782};
+				angles[] = {6.202031,0.15271696,6.249864};
+			};
+			side = "Empty";
+			class Attributes{};
+			id = 671;
+			type = "Land_LuggageHeap_04_F";
+		};
+		class Item343
+		{
+			dataType = "Object";
+			class PositionInfo
+			{
+				position[] = {8925.101,32.554245,12061.051};
+				angles[] = {0.0,2.5285914,0.0};
+			};
+			side = "Empty";
+			class Attributes{};
+			id = 672;
+			type = "Land_Rack_F";
+		};
+		class Item344
+		{
+			dataType = "Object";
+			class PositionInfo
+			{
+				position[] = {8926.25,31.849865,12057.882};
+				angles[] = {6.199383,0.15271696,6.252527};
+			};
+			side = "Empty";
+			class Attributes{};
+			id = 673;
+			type = "Land_ShelvesWooden_F";
+		};
+		class Item345
+		{
+			dataType = "Object";
+			class PositionInfo
+			{
+				position[] = {8926.224,31.824677,12057.058};
+				angles[] = {6.199383,0.15271696,6.252527};
+			};
+			side = "Empty";
+			class Attributes{};
+			id = 674;
+			type = "Land_WheelieBin_01_F";
+		};
+		class Item346
+		{
+			dataType = "Object";
+			class PositionInfo
+			{
+				position[] = {9121.892,22.64947,12085.913};
+				angles[] = {6.2818484,0.0,6.2458706};
+			};
+			side = "Empty";
+			class Attributes{};
+			id = 675;
+			type = "Land_Wreck_Truck_F";
+		};
+		class Item347
+		{
+			dataType = "Object";
+			class PositionInfo
+			{
+				position[] = {9119.983,22.559399,12080.769};
+				angles[] = {6.251197,3.8696475,6.2299027};
+			};
+			side = "Empty";
+			class Attributes{};
+			id = 678;
+			type = "Land_Wreck_Truck_dropside_F";
+		};
+	};
+};
+//};
